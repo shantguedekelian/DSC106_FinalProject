@@ -1,0 +1,26 @@
+UTEndUse.UTEndUseSubfield.UTEndUseLookup,UTEndUse.UTEndUseSubfield.UTEndUseName,UTEndUse.UTEndUseSubfield.international,UTEndUse.UTEndUseSubfield.national,UTEndUse.UTEndUseSubfield.other,UTEndUse.UTEndUseSubfield.subsistence,assessment_id,internal_taxon_id,internal_taxon_name
+1,,FALSE,FALSE,,TRUE,207983513,88416883,Pelophylax lessonae
+1,,FALSE,TRUE,,TRUE,227226945,58692,Pelophylax perezi
+13,,TRUE,TRUE,,FALSE,227229041,18377,Proteus anguinus
+1,,FALSE,FALSE,,TRUE,227232549,173103952,Rana parvipalmata
+13,,TRUE,TRUE,,FALSE,227233771,19843,Salamandra atra
+13,,TRUE,TRUE,,FALSE,228179967,77970289,Bombina variegata
+14,,TRUE,TRUE,,FALSE,228179967,77970289,Bombina variegata
+17,,FALSE,TRUE,fish bait,FALSE,228179967,77970289,Bombina variegata
+13,,TRUE,TRUE,,FALSE,228182338,82496838,Hyla arborea
+13,,TRUE,TRUE,,FALSE,228183943,59472,Ichthyosaura alpestris
+14,,TRUE,TRUE,,FALSE,228183943,59472,Ichthyosaura alpestris
+13,,FALSE,TRUE,,FALSE,228184805,79077482,Lissotriton graecus
+14,,FALSE,TRUE,,FALSE,228184805,79077482,Lissotriton graecus
+13,,TRUE,TRUE,,FALSE,228185921,59478,Lissotriton montandoni
+14,,TRUE,TRUE,,FALSE,228185921,59478,Lissotriton montandoni
+13,,TRUE,TRUE,,FALSE,228187875,196236126,Pelobates fuscus
+1,,TRUE,TRUE,,FALSE,229003815,58637,Pelophylax kurtmuelleri
+13,,TRUE,TRUE,,FALSE,229006372,79078647,Lissotriton vulgaris
+13,,TRUE,TRUE,,FALSE,89706481,136135,Salamandrina perspicillata
+13,,TRUE,TRUE,,FALSE,219148292,59467,Salamandra salamandra
+13,,TRUE,TRUE,,FALSE,219150517,59477,Triturus marmoratus
+17,,FALSE,FALSE,fishing bait,TRUE,264468745,214696589,Triturus carnifex
+13,,FALSE,TRUE,,FALSE,265122877,59405,Speleomantes strinatii
+13,,FALSE,TRUE,,FALSE,265124975,20458,Speleomantes italicus
+13,,FALSE,TRUE,,FALSE,265126221,20454,Speleomantes ambrosii

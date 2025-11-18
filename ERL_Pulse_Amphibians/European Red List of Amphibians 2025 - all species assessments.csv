@@ -1,0 +1,100 @@
+﻿Order,Family,Species name,Taxonomic authority,Common name,taxon_id,assessment_id,European category,EU 27 regional category,Endemic to Europe,Endemic to EU 27,Link to assessment
+Anura,Alytidae,Alytes almogavarii,"Arntzen and García-París, 1995",Catalonian Midwife Toad,178592041,228179002,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/178592041/228179002
+Anura,Alytidae,Alytes cisternasii,"Boscá, 1879",Iberian Midwife Toad,55266,207980155,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/55266/207980155
+Anura,Alytidae,Alytes dickhilleni,"Arntzen & García-París, 1995",Betic Midwife Toad,979,228179357,EN,EN,Yes,Yes,https://www.iucnredlist.org/species/979/228179357
+Anura,Alytidae,Alytes muletensis,"(Sanchiz & Adrover, 1979)",Mallorcan Midwife Toad,977,207979274,EN,EN,Yes,Yes,https://www.iucnredlist.org/species/977/207979274
+Anura,Alytidae,Alytes obstetricans,"(Laurenti, 1768)",Common Midwife Toad,178591974,228179645,LC,LC,Yes,No,https://www.iucnredlist.org/species/178591974/228179645
+Anura,Ranidae,Aquarana catesbeianus,"(Shaw, 1802)",American Bullfrog,58565,202022987,NA,Not recorded,No,No,https://www.iucnredlist.org/species/58565/202022987
+Anura,Bominatoridae,Bombina bombina,"(Linnaeus, 1761)",Fire-bellied Toad,2865,67862807,LC,LC,No,No,https://www.iucnredlist.org/species/2865/67862807
+Anura,Bominatoridae,Bombina variegata,"(Linnaeus, 1758)",Yellow–bellied Toad,77970289,228179967,LC,LC,Yes,No,https://www.iucnredlist.org/species/77970289/228179967
+Anura,Bufonidae,Bufo bufo,"(Linnaeus, 1758)",Common Toad,88316072,200188858,LC,LC,No,No,https://www.iucnredlist.org/species/88316072/200188858
+Anura,Bufonidae,Bufo spinosus,"Daudin, 1803",Spiny Toad,88316046,200190036,LC,Not recorded,No,No,https://www.iucnredlist.org/species/88316046/200190036
+Anura,Bufonidae,Bufotes balearicus,"(Boettger, 1880)",,153567,228180449,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/153567/228180449
+Anura,Bufonidae,Bufotes boulengeri,"(Lataste, 1879)",African Green Toad,182525327,200191612,LC,Not recorded,No,No,https://www.iucnredlist.org/species/182525327/200191612
+Anura,Bufonidae,Bufotes cypriensis,"Litvinchuk, Mazepa, Jablonski, Dufresnes, 2019",Cyprus Green Toad,172962880,228180876,NT,NT,Yes,Yes,https://www.iucnredlist.org/species/172962880/228180876
+Anura,Bufonidae,Bufotes viridis,"(Laurenti, 1768)",Green Toad,182530066,200192160,LC,LC,No,No,https://www.iucnredlist.org/species/182530066/200192160
+Caudata,Salamandridae,Calotriton arnoldi,"Carranza & Amat, 2005",Montseny Brook Newt,136131,89696462,CR,CR,Yes,Yes,https://www.iucnredlist.org/species/136131/89696462
+Caudata,Salamandridae,Calotriton asper,"(Dugès, 1852)",Pyrenean Brook Salamander,59448,229005750,LC,LC,Yes,No,https://www.iucnredlist.org/species/59448/229005750
+Caudata,Salamandridae,Chioglossa lusitanica,"Bocage, 1864",Golden-striped Salamander,4657,228181133,NT,NT,Yes,Yes,https://www.iucnredlist.org/species/4657/228181133
+Anura,Alytidae,Discoglossus galganoi,"Capula, Nascetti, Lanza, Bullini & Crespo, 1985",Iberian Painted Frog,173115779,207984263,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/173115779/207984263
+Anura,Alytidae,Discoglossus montalentii,"Lanza, Nascetti, Capula & Bullini, 1984",Discoglosse Corse,6714,207979535,NT,NT,Yes,Yes,https://www.iucnredlist.org/species/6714/207979535
+Anura,Alytidae,Discoglossus pictus,"Otth, 1837",Painted Frog,55270,200187939,LC,LC,No,No,https://www.iucnredlist.org/species/55270/200187939
+Anura,Alytidae,Discoglossus sardus,"Tschudi, 1837",Tyrrhenian Painted Frog,55271,207980412,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/55271/207980412
+Anura,Bufonidae,Epidalea calamita,"(Laurenti, 1768)",Natterjack Toad,54598,228181470,LC,LC,Yes,No,https://www.iucnredlist.org/species/54598/228181470
+Caudata,Salamandridae,Euproctus montanus,"(Savi, 1838)",Corsican Mountain Newt,59449,228181894,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/59449/228181894
+Caudata,Salamandridae,Euproctus platycephalus,"(Gravenhorst, 1829)",Sardinian Brook Salamander,8371,223758127,EN,EN,Yes,Yes,https://www.iucnredlist.org/species/8371/223758127
+Anura,Hylidae,Hyla arborea,"(Linnaeus, 1758)",European Tree Frog,82496838,228182338,LC,LC,Yes,No,https://www.iucnredlist.org/species/82496838/228182338
+Anura,Hylidae,Hyla intermedia,"Boulenger, 1882",Italian Tree Frog,55517,229001009,LC,Not recorded,Yes,No,https://www.iucnredlist.org/species/55517/229001009
+Anura,Hylidae,Hyla meridionalis,"Boettger, 1874",Stripeless Treefrog,173109790,200196698,LC,LC,No,No,https://www.iucnredlist.org/species/173109790/200196698
+Anura,Hylidae,Hyla molleri,"Bedriaga, 1889",Iberian Tree Frog,82493101,228182906,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/82493101/228182906
+Anura,Hylidae,Hyla orientalis,"Bedriaga, 1890",Shelkovnikov's Tree Frog,82494309,202052085,LC,LC,No,No,https://www.iucnredlist.org/species/82494309/202052085
+Anura,Hylidae,Hyla sarda,"(De Betta, 1853)",Sardinian Tree Frog,55645,223764163,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/55645/223764163
+Anura,Hylidae,Hyla savignyi,"Audouin, 1827",Lemon-Yellow Tree Frog,78928690,202052715,LC,LC,No,No,https://www.iucnredlist.org/species/78928690/202052715
+Caudata,Salamandridae,Ichthyosaura alpestris,"(Laurenti, 1768)",Alpine Newt,59472,228183943,LC,LC,Yes,No,https://www.iucnredlist.org/species/59472/228183943
+Caudata,Salamandridae,Lissotriton boscai,"(Lataste, 1879)",Bosca's Newt,79079411,228184459,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/79079411/228184459
+Caudata,Salamandridae,Lissotriton graecus,"(Wolterstorff, 1906)",Greek Smooth Newt,79077482,228184805,LC,LC,Yes,No,https://www.iucnredlist.org/species/79077482/228184805
+Caudata,Salamandridae,Lissotriton helveticus,"(Razoumowsky, 1789)",Palmate Newt,59475,228185144,LC,LC,Yes,No,https://www.iucnredlist.org/species/59475/228185144
+Caudata,Salamandridae,Lissotriton italicus,"(Peracca, 1898)",Italian Newt,59476,229006043,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/59476/229006043
+Caudata,Salamandridae,Lissotriton maltzani,"(Boettger, 1879)",Portuguese Smooth Newt,79079357,228185515,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/79079357/228185515
+Caudata,Salamandridae,Lissotriton montandoni,"(Boulenger, 1880)",Carpathian Newt,59478,228185921,LC,LC,Yes,No,https://www.iucnredlist.org/species/59478/228185921
+Caudata,Salamandridae,Lissotriton schmidtleri,"(Raxworthy, 1988)",Schmidtler's Smooth Newt,211757868,211757998,LC,Not recorded,No,No,https://www.iucnredlist.org/species/211757868/211757998
+Caudata,Salamandridae,Lissotriton vulgaris,"(Linnaeus, 1758)",Smooth Newt,79078647,229006372,LC,Not recorded,Yes,No,https://www.iucnredlist.org/species/79078647/229006372
+Caudata,Salamandridae,Lyciasalamandra helverseni,"(Pieper, 1963)",Karpathos Salamander,61918,228186236,VU,VU,Yes,Yes,https://www.iucnredlist.org/species/61918/228186236
+Caudata,Salamandridae,Lyciasalamandra luschani,"(Steindachner, 1891)",Luschan's Salamander,41241,67694324,EN,EN,No,No,https://www.iucnredlist.org/species/41241/67694324
+Anura,Pelobatidae,Pelobates balcanicus,"Karaman, 1928",Balkan Spadefoot,172312067,228186498,LC,LC,Yes,No,https://www.iucnredlist.org/species/172312067/228186498
+Anura,Pelobatidae,Pelobates cultripes,"(Cuvier, 1829)",Western Spadefoot,58052,228187495,VU,VU,Yes,Yes,https://www.iucnredlist.org/species/58052/228187495
+Anura,Pelobatidae,Pelobates fuscus,"(Laurenti, 1768)",Common Spadefoot,196236126,228187875,LC,LC,Yes,No,https://www.iucnredlist.org/species/196236126/228187875
+Anura,Pelobatidae,Pelobates syriacus,"Boettger, 1889",Syrian Spadefoot,172313717,223143581,NT,EN,No,No,https://www.iucnredlist.org/species/172313717/223143581
+Anura,Pelobatidae,Pelobates varaldii,"Pasteur & Bons, 1959",Varaldi’s Spadefoot Toad,58054,207984541,NA,Not recorded,No,No,https://www.iucnredlist.org/species/58054/207984541
+Anura,Pelobatidae,Pelobates vespertinus,"(Pallas, 1771)",Pallas' Spadefoot Toad,196236041,202020399,LC,Not recorded,No,No,https://www.iucnredlist.org/species/196236041/202020399
+Anura,Pelodytidae,Pelodytes atlanticus,"Díaz-Rodríguez, Gehara, Márquez, Vences, Gonçalves, Sequeira, Martínez-Solano & Tejedo, 2017",Lusitanian Parsley Frog,114139495,227223836,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/114139495/227223836
+Anura,Pelodytidae,Pelodytes ibericus,"Sánchez-Herráiz, Barbadillo, Machordom & Sanchiz, 2000",Iberian Parsley Frog,58055,227224480,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/58055/227224480
+Anura,Pelodytidae,Pelodytes punctatus,"(Daudin, 1802)",,173111497,218083218,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/173111497/218083218
+Anura,Ranidae,Pelophylax bedriagae,"(Camerano, 1882)",Bedriaga's Frog,58893474,200682549,LC,LC,No,No,https://www.iucnredlist.org/species/58893474/200682549
+Anura,Ranidae,Pelophylax cerigensis,"(Beerli, Hotz, Tunner, Heppich & Uzzell, 1994)",Karpathos Frog,58567,229002159,EN,EN,Yes,Yes,https://www.iucnredlist.org/species/58567/229002159
+Anura,Ranidae,Pelophylax cretensis,"(Beerli, Hotz, Tunner, Heppich & Uzzell, 1994)",Cretan Frog,58581,227225745,EN,EN,Yes,Yes,https://www.iucnredlist.org/species/58581/227225745
+Anura,Ranidae,Pelophylax cypriensis,"Plötner, Baier, Akın, Mazepa, Schreiber, Beerli, Litvinchuk, Bilgin, Borkin & Uzzell, 2012",Cyprus Water Frog,58892549,229002620,VU,VU,Yes,Yes,https://www.iucnredlist.org/species/58892549/229002620
+Anura,Ranidae,Pelophylax epeiroticus,"(Schneider, Sofianidou & Kyriakopoulou-Sklavounou, 1984)",Epirus Water Frog,58592,207981785,NT,VU,Yes,No,https://www.iucnredlist.org/species/58592/207981785
+Anura,Ranidae,Pelophylax kurtmuelleri,"(Gayda, 1940)",Balkan Water Frog,58637,229003815,LC,LC,Yes,No,https://www.iucnredlist.org/species/58637/229003815
+Anura,Ranidae,Pelophylax lessonae,"(Camerano, 1882)",Pool Frog,88416883,207983513,LC,Not recorded,Yes,No,https://www.iucnredlist.org/species/88416883/207983513
+Anura,Ranidae,Pelophylax perezi,"(López-Seoane, 1885)",Perez's Frog,58692,227226945,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/58692/227226945
+Anura,Ranidae,Pelophylax ridibundus,"(Pallas, 1771)",Marsh Frog,58705,200716374,LC,Not recorded,No,No,https://www.iucnredlist.org/species/58705/200716374
+Anura,Ranidae,Pelophylax saharicus,"(Boulenger in Hartert, 1913)",North African Green Frog,58707,200717357,NA,NA,No,No,https://www.iucnredlist.org/species/58707/200717357
+Anura,Ranidae,Pelophylax shqipericus,"(Hotz, Uzzell, Guenther, Tunner & Heppich, 1987)",Albanian Water Frog,58715,207982996,VU,NA,Yes,No,https://www.iucnredlist.org/species/58715/207982996
+Caudata,Salamandridae,Pleurodeles waltl,"Michahelles, 1830",Sharp-ribbed Salamander,59463,200741141,NT,NT,No,No,https://www.iucnredlist.org/species/59463/200741141
+Caudata,Proteidae,Proteus anguinus,"Laurenti, 1768",Olm,18377,227229041,VU,VU,Yes,No,https://www.iucnredlist.org/species/18377/227229041
+Anura,Ranidae,Rana arvalis,"Nilsson, 1842",Moor Frog,58548,200717774,LC,Not recorded,No,No,https://www.iucnredlist.org/species/58548/200717774
+Anura,Ranidae,Rana dalmatina,"Fitzinger, 1838",Agile Frog,58584,200718410,LC,Not recorded,No,No,https://www.iucnredlist.org/species/58584/200718410
+Anura,Ranidae,Rana graeca,"Boulenger, 1891",Greek Stream Frog,58605,229005415,LC,LC,Yes,No,https://www.iucnredlist.org/species/58605/229005415
+Anura,Ranidae,Rana iberica,"Boulenger, 1879",Iberian Frog,58622,227229860,VU,VU,Yes,Yes,https://www.iucnredlist.org/species/58622/227229860
+Anura,Ranidae,Rana italica,"Dubois, 1987",Italian Stream Frog,58624,227231646,LC,LC,Yes,No,https://www.iucnredlist.org/species/58624/227231646
+Anura,Ranidae,Rana latastei,"Boulenger, 1879",Italian Agile Frog,19156,227232074,VU,VU,Yes,No,https://www.iucnredlist.org/species/19156/227232074
+Anura,Ranidae,Rana parvipalmata,"López-Seoane, 1885",Galician Common Frog,173103952,227232549,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/173103952/227232549
+Anura,Ranidae,Rana pyrenaica,"Serra-Cobo, 1993",Pyrenean Frog,19183,227233345,EN,EN,Yes,Yes,https://www.iucnredlist.org/species/19183/227233345
+Anura,Ranidae,Rana temporaria,"Linnaeus, 1758",European Common Frog,173101508,200721782,LC,Not recorded,No,No,https://www.iucnredlist.org/species/173101508/200721782
+Caudata,Salamandridae,Salamandra algira,"Bedriaga, 1883",North African Fire Salamander,59464,200741882,NA,NA,No,No,https://www.iucnredlist.org/species/59464/200741882
+Caudata,Salamandridae,Salamandra atra,"Laurenti, 1768",Alpine Salamander,19843,227233771,LC,LC,Yes,No,https://www.iucnredlist.org/species/19843/227233771
+Caudata,Salamandridae,Salamandra corsica,"Savi, 1838",Corsican Fire Salamander,59465,227234846,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/59465/227234846
+Caudata,Salamandridae,Salamandra lanzai,"Nascetti, Capula & Bullini, 1988",Lanza's Alpine Salamander,19845,89699123,CR,CR,Yes,Yes,https://www.iucnredlist.org/species/19845/89699123
+Caudata,Salamandridae,Salamandra salamandra,"(Linnaeus, 1758)",Common Fire Salamander,59467,219148292,VU,VU,Yes,No,https://www.iucnredlist.org/species/59467/219148292
+Caudata,Hynobiidae,Salamandrella keyserlingii,"Dybowski, 1870",Siberian Salamander,136687833,202049049,LC,Not recorded,No,No,https://www.iucnredlist.org/species/136687833/202049049
+Caudata,Salamandridae,Salamandrina perspicillata,"(Savi, 1821)",Northern Spectacled Salamander,136135,89706481,EN,EN,Yes,No,https://www.iucnredlist.org/species/136135/89706481
+Caudata,Salamandridae,Salamandrina terdigitata,"(Bonnaterre, 1789)",Spectacled Salamander,59468,227235526,LC,LC,Yes,Yes,https://www.iucnredlist.org/species/59468/227235526
+Anura,Bufonidae,Sclerophrys mauritanica,"(Schlegel, 1841)",Moroccan Toad,54703,202016456,NA,Not recorded,No,No,https://www.iucnredlist.org/species/54703/202016456
+Caudata,Plethodontidae,Speleomantes ambrosii,"(Lanza, 1955)",Ambrosi's Cave Salamander,20454,265126221,CR,CR,Yes,Yes,https://www.iucnredlist.org/species/20454/265126221
+Caudata,Plethodontidae,Speleomantes flavus,"(Stefani, 1969)",Mount Albo's Cave Salamander,20455,227235866,EN,EN,Yes,Yes,https://www.iucnredlist.org/species/20455/227235866
+Caudata,Plethodontidae,Speleomantes genei,"(Temminck & Schlegel, 1838)",Gené's Cave Salamander,20456,227236143,VU,VU,Yes,Yes,https://www.iucnredlist.org/species/20456/227236143
+Caudata,Plethodontidae,Speleomantes imperialis,"(Stefani, 1969)",Scented Cave Salamander,20457,227236400,NT,NT,Yes,Yes,https://www.iucnredlist.org/species/20457/227236400
+Caudata,Plethodontidae,Speleomantes italicus,"(Dunn, 1923)",Italian Cave Salamander,20458,265124975,EN,EN,Yes,Yes,https://www.iucnredlist.org/species/20458/265124975
+Caudata,Plethodontidae,Speleomantes sarrabusensis,"Lanza, Leo, Forti, Cimmaruta, Caputo & Nascetti, 2001",Sette Fratelli Cave Salamander,135825,227236611,CR,CR,Yes,Yes,https://www.iucnredlist.org/species/135825/227236611
+Caudata,Plethodontidae,Speleomantes strinatii,"(Aellen, 1958)",French Cave Salamander,59405,265122877,EN,EN,Yes,Yes,https://www.iucnredlist.org/species/59405/265122877
+Caudata,Plethodontidae,Speleomantes supramontis,"(Lanza, Nascetti & Bullini, 1986)",Supramonte Cave Salamander,20459,227237010,EN,EN,Yes,Yes,https://www.iucnredlist.org/species/20459/227237010
+Caudata,Salamandridae,Triturus carnifex,"(Laurenti, 1768)",Italian Crested Newt,214696589,264468745,VU,VU,Yes,Yes,https://www.iucnredlist.org/species/214696589/264468745
+Caudata,Salamandridae,Triturus cristatus,"(Laurenti, 1768)",Great Crested Newt,22212,200183152,LC,Not recorded,No,No,https://www.iucnredlist.org/species/22212/200183152
+Caudata,Salamandridae,Triturus dobrogicus,"(Kiritzescu, 1903)",Danube Crested Newt,22216,227237457,LC,LC,Yes,No,https://www.iucnredlist.org/species/22216/227237457
+Caudata,Salamandridae,Triturus ivanbureschi,"Arntzen & Wielstra, 2013",Buresch's Crested New,88103927,200745594,LC,Not recorded,No,No,https://www.iucnredlist.org/species/88103927/200745594
+Caudata,Salamandridae,Triturus karelinii,"(Strauch, 1870)",Southern Crested Newt,211146190,200746759,LC,Not recorded,No,No,https://www.iucnredlist.org/species/211146190/200746759
+Caudata,Salamandridae,Triturus macedonicus,"(Karaman, 1922)",Macedonian Crested Newt,88104000,227237916,VU,EN,Yes,No,https://www.iucnredlist.org/species/88104000/227237916
+Caudata,Salamandridae,Triturus marmoratus,"(Latreille, 1800)",Marbled Newt,59477,219150517,VU,VU,Yes,Yes,https://www.iucnredlist.org/species/59477/219150517
+Caudata,Salamandridae,Triturus pygmaeus,"(Wolterstorff, 1905)",Southern Marbled Newt,59479,227238403,NT,NT,Yes,Yes,https://www.iucnredlist.org/species/59479/227238403
+Anura,Pipidae,Xenopus laevis,"(Daudin, 1802)",African Clawed Frog,110466172,202022250,NA,Not recorded,No,No,https://www.iucnredlist.org/species/110466172/202022250

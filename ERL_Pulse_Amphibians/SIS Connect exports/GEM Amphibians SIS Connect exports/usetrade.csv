@@ -1,0 +1,13 @@
+UTEndUse.UTEndUseSubfield.UTEndUseLookup,UTEndUse.UTEndUseSubfield.UTEndUseName,UTEndUse.UTEndUseSubfield.international,UTEndUse.UTEndUseSubfield.national,UTEndUse.UTEndUseSubfield.other,UTEndUse.UTEndUseSubfield.subsistence,assessment_id,internal_taxon_id,internal_taxon_name
+1,,false,true,,true,207981785,58592,Pelophylax epeiroticus
+1,,true,true,,true,207982996,58715,Pelophylax shqipericus
+13,,true,false,,false,207982996,58715,Pelophylax shqipericus
+13,,true,true,,false,223758127,8371,Euproctus platycephalus
+13,,true,true,,false,227235526,59468,Salamandrina terdigitata
+13,,false,true,,false,227235866,20455,Speleomantes flavus
+15,,false,true,,false,227236143,20456,Speleomantes genei
+13,,false,true,,false,227236400,20457,Speleomantes imperialis
+13,,false,true,,false,227236611,135825,Speleomantes sarrabusensis
+13,,false,true,,false,227237010,20459,Speleomantes supramontis
+13,,false,true,,false,228185515,79079357,Lissotriton maltzani
+1,,false,true,,true,229002620,58892549,Pelophylax cypriensis

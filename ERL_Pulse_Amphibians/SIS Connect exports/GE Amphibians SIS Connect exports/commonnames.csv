@@ -1,0 +1,185 @@
+internal_taxon_id,internal_taxon_name,language,name,primary
+4657,Chioglossa lusitanica,Spanish; Castilian,Salamandra Rabilarga,FALSE
+4657,Chioglossa lusitanica,English,Golden-striped Salamander,TRUE
+18377,Proteus anguinus,English,Proteus,FALSE
+18377,Proteus anguinus,Slovenian,Človeška ribica,FALSE
+18377,Proteus anguinus,Croatian,Čovječja ribica,FALSE
+18377,Proteus anguinus,Bosnian,Čovječja ribica,FALSE
+18377,Proteus anguinus,Slovenian,Močeril,FALSE
+18377,Proteus anguinus,Italian,Proteo,FALSE
+18377,Proteus anguinus,English,Olm,TRUE
+19156,Rana latastei,French,Grenouille agile d'Italie,FALSE
+19156,Rana latastei,French,Grenouille de Lataste,FALSE
+19156,Rana latastei,German,Italianischer Grasfrosch,FALSE
+19156,Rana latastei,German,Italienischer Springfrosch,FALSE
+19156,Rana latastei,Slovenian,Laška žaba,FALSE
+19156,Rana latastei,Croatian,Lombardijska smeđa žaba,FALSE
+19156,Rana latastei,Italian,Rana di Lataste,FALSE
+19156,Rana latastei,English,Italian Agile Frog,TRUE
+19183,Rana pyrenaica,French,Grenouille des Pyrénées,FALSE
+19183,Rana pyrenaica,Spanish; Castilian,Rana Pirenaica,FALSE
+19183,Rana pyrenaica,English,Pyrenean Frog,TRUE
+19843,Salamandra atra,English,Alpine Salamander,FALSE
+19843,Salamandra atra,English,Golden Salamander,FALSE
+19843,Salamandra atra,Italian,Salamandra Alpina,FALSE
+19843,Salamandra atra,Italian,Salamandra Alpina di Aurora,FALSE
+22216,Triturus dobrogicus,German,Donau-kammolch,FALSE
+22216,Triturus dobrogicus,Russian,Dunaiskii Triton,FALSE
+22216,Triturus dobrogicus,Hungarian,Dunai tarajosgőte,FALSE
+22216,Triturus dobrogicus,English,Danube Crested Newt,TRUE
+54598,Epidalea calamita,Russian,Kamyshevaya Zhaba,FALSE
+54598,Epidalea calamita,Polish,Ropucha Paskowka,FALSE
+54598,Epidalea calamita,Spanish; Castilian,Sapo Corredor,FALSE
+54598,Epidalea calamita,English,Natterjack Toad,TRUE
+55517,Hyla intermedia,Italian,Raganella Italiana,FALSE
+55517,Hyla intermedia,English,Italian Tree Frog,TRUE
+58052,Pelobates cultripes,Spanish; Castilian,Sapo de Espuelas,FALSE
+58052,Pelobates cultripes,English,Western Spadefoot,TRUE
+58605,Rana graeca,"Greek, Modern (1453-)",Γραικοβάτραχος,FALSE
+58605,Rana graeca,Macedonian,Поточна жаба,FALSE
+58605,Rana graeca,English,Greek Stream Frog,TRUE
+58622,Rana iberica,Portuguese,Rã-ibérica,FALSE
+58622,Rana iberica,Spanish; Castilian,Rana Patilarga,FALSE
+58622,Rana iberica,English,Iberian Frog,TRUE
+58637,Pelophylax kurtmuelleri,Italian,Rana dei Balcani,FALSE
+58637,Pelophylax kurtmuelleri,"Greek, Modern (1453-)",Βαλκανικός Βάτραχος,FALSE
+58637,Pelophylax kurtmuelleri,English,Balkan Water Frog,TRUE
+58692,Pelophylax perezi,Spanish; Castilian,Rana Común,FALSE
+58692,Pelophylax perezi,English,Perez's Frog,TRUE
+59448,Calotriton asper,English,Pyrenean Mountain Newt,FALSE
+59448,Calotriton asper,English,Pyrenean Mountain Salamander,FALSE
+59448,Calotriton asper,English,Pyrenean Newt,FALSE
+59448,Calotriton asper,English,Pyreneen Salamander,FALSE
+59448,Calotriton asper,English,Pyrenees Mountain Newt,FALSE
+59448,Calotriton asper,English,Pyrenees Mountain Salamander,FALSE
+59448,Calotriton asper,Spanish; Castilian,Tritón Pirenaico,FALSE
+59448,Calotriton asper,English,Pyrenean Brook Salamander,TRUE
+59472,Ichthyosaura alpestris,Hungarian,Alpesi gőte,FALSE
+59472,Ichthyosaura alpestris,Russian,Alpiiskii Triton,FALSE
+59472,Ichthyosaura alpestris,Polish,Traszka Gorska,FALSE
+59472,Ichthyosaura alpestris,Spanish; Castilian,Tritón Alpino,FALSE
+59472,Ichthyosaura alpestris,Italian,Tritone Alpino,FALSE
+59472,Ichthyosaura alpestris,"Greek, Modern (1453-)",Αλπικός τρίτωνας,FALSE
+59472,Ichthyosaura alpestris,Macedonian,Планински мрморец,FALSE
+59472,Ichthyosaura alpestris,English,Alpine Newt,TRUE
+59475,Lissotriton helveticus,French,Triton palmé,FALSE
+59475,Lissotriton helveticus,Spanish; Castilian,Tritón Palmeado,FALSE
+59475,Lissotriton helveticus,English,Palmate Newt,TRUE
+59478,Lissotriton montandoni,Russian,Karpatskii Triton,FALSE
+59478,Lissotriton montandoni,Polish,Traszka Karpacka,FALSE
+59478,Lissotriton montandoni,English,Carpathian Newt,TRUE
+59479,Triturus pygmaeus,Spanish; Castilian,Tritón Pigmeo,FALSE
+59479,Triturus pygmaeus,English,Southern Marbled Newt,TRUE
+77970289,Bombina variegata,Polish,Kumak Gorski,FALSE
+77970289,Bombina variegata,Hungarian,Sárgahasú unka (Hungarian),FALSE
+77970289,Bombina variegata,Turkish,Sarılı Kurbağa,FALSE
+77970289,Bombina variegata,Italian,Ululone dal Ventre Giallo,FALSE
+77970289,Bombina variegata,Russian,Zheltobryukhaya Zherlyanka,FALSE
+77970289,Bombina variegata,Macedonian,Жолт мукач,FALSE
+77970289,Bombina variegata,English,Yellow–bellied Toad,TRUE
+79077482,Lissotriton graecus,English,Greek Smooth Newt,FALSE
+79077482,Lissotriton graecus,"Greek, Modern (1453-)",Λισσοτρίτωνας,FALSE
+79078647,Lissotriton vulgaris,Turkish,Küçük Semender,FALSE
+79078647,Lissotriton vulgaris,Russian,Obyknovennyi Triton,FALSE
+79078647,Lissotriton vulgaris,Hungarian,Pettyes gőte,FALSE
+79078647,Lissotriton vulgaris,Hungarian,Pettyes gőte,FALSE
+79078647,Lissotriton vulgaris,Polish,Traszka Zwyczajnan,FALSE
+79078647,Lissotriton vulgaris,Italian,Tritone Punteggiato,FALSE
+79078647,Lissotriton vulgaris,Macedonian,Обичен мрморец,FALSE
+79078647,Lissotriton vulgaris,English,Smooth Newt,TRUE
+79079411,Lissotriton boscai,Spanish; Castilian,Tritón Ibérico,FALSE
+79079411,Lissotriton boscai,English,Bosca's Newt,TRUE
+82493101,Hyla molleri,English,Moller's Tree Frog,FALSE
+82493101,Hyla molleri,English,Iberian Tree Frog,TRUE
+82496838,Hyla arborea,Italian,Raganella Comune,FALSE
+82496838,Hyla arborea,French,Rainette verte,FALSE
+82496838,Hyla arborea,Spanish; Castilian,Ranita de San Antón,FALSE
+82496838,Hyla arborea,Polish,Rzekotka Drzewna,FALSE
+82496838,Hyla arborea,Hungarian,Zöld levelibéka,FALSE
+82496838,Hyla arborea,"Greek, Modern (1453-)",Δενδροβάτραχος,FALSE
+82496838,Hyla arborea,Macedonian,Гаталинка,FALSE
+82496838,Hyla arborea,English,European Tree Frog,TRUE
+88104000,Triturus macedonicus,Bosnian,Makedonski krestasti vodenjak,FALSE
+88104000,Triturus macedonicus,Bulgarian,Mакедонски гребенест тритон,FALSE
+88104000,Triturus macedonicus,Albanian,Tritoni me kreshtë,FALSE
+88104000,Triturus macedonicus,"Greek, Modern (1453-)",Μακεδονικός τρίτωνας,FALSE
+88104000,Triturus macedonicus,Serbian,Македонски велики мрмољак,FALSE
+88104000,Triturus macedonicus,Macedonian,Македонски мрморец,FALSE
+88104000,Triturus macedonicus,English,Macedonian Crested Newt,TRUE
+88416883,Pelophylax lessonae,Hungarian,Kis tavibéka,FALSE
+88416883,Pelophylax lessonae,Italian,Rana di Lessona,FALSE
+88416883,Pelophylax lessonae,Italian,Rana Verde Minore,FALSE
+88416883,Pelophylax lessonae,Polish,Zaba Jeziorkowa,FALSE
+88416883,Pelophylax lessonae,Russian,Прудoвaя Лягушка,FALSE
+88416883,Pelophylax lessonae,English,Pool Frog,TRUE
+114139495,Pelodytes atlanticus,English,Lusitanian Parsley Frog,TRUE
+172312067,Pelobates balcanicus,English,Βαλκανικός Πηλοβάτης,FALSE
+172312067,Pelobates balcanicus,English,Πηλοβάτης της Χλόης,FALSE
+172312067,Pelobates balcanicus,English,Balkan Spadefoot,TRUE
+172962880,Bufotes cypriensis,English,Cyprus Green Toad,TRUE
+173103952,Rana parvipalmata,Spanish; Castilian,Rana galaica,FALSE
+173103952,Rana parvipalmata,English,Galician Common Frog,TRUE
+173115779,Discoglossus galganoi,English,Iberian Painted Frog,TRUE
+178591974,Alytes obstetricans,Spanish; Castilian,Sapo Partero Común,FALSE
+178591974,Alytes obstetricans,English,Common Midwife Toad,TRUE
+178592041,Alytes almogavarii,English,Catalonian Midwife Toad,TRUE
+196236126,Pelobates fuscus,English,Common Spadefoot Toad,FALSE
+196236126,Pelobates fuscus,English,European Common Spadefoot,FALSE
+196236126,Pelobates fuscus,Hungarian,Barna ásóbéka,FALSE
+196236126,Pelobates fuscus,Croatian,Češnjača,FALSE
+196236126,Pelobates fuscus,Polish,Grzebiuszka Ziemna,FALSE
+196236126,Pelobates fuscus,Slovenian,Navadna česnovka,FALSE
+196236126,Pelobates fuscus,Russian,Obyknovennaya Chesnochnitsa,FALSE
+196236126,Pelobates fuscus,Italian,Pelobate Fosco,FALSE
+196236126,Pelobates fuscus,Serbian,Обична чешњарка,FALSE
+196236126,Pelobates fuscus,English,Common Spadefoot,TRUE
+19845,Salamandra lanzai,Italian,Salamandra di Lanza,FALSE
+19845,Salamandra lanzai,English,Lanza's Alpine Salamander,TRUE
+20454,Speleomantes ambrosii,English,Spezia Cave Salamander,FALSE
+20454,Speleomantes ambrosii,Italian,Geotritone di Ambrosi,FALSE
+20454,Speleomantes ambrosii,English,Ambrosi's Cave Salamander,TRUE
+20458,Speleomantes italicus,Italian,Geotritone Italiano,FALSE
+20458,Speleomantes italicus,English,Italian Cave Salamander,TRUE
+59405,Speleomantes strinatii,English,North-west Italian Cave Salamander,FALSE
+59405,Speleomantes strinatii,English,Strinati’s Cave Salamander,FALSE
+59405,Speleomantes strinatii,Italian,Geotritone di Strinati,FALSE
+59405,Speleomantes strinatii,French,Spélerpès de Strinati,FALSE
+59405,Speleomantes strinatii,English,French Cave Salamander,TRUE
+59467,Salamandra salamandra,English,European Salamander,FALSE
+59467,Salamandra salamandra,English,Fire Salamander,FALSE
+59467,Salamandra salamandra,English,Spotted Salamander,FALSE
+59467,Salamandra salamandra,Albanian,E bukura e dheut,FALSE
+59467,Salamandra salamandra,German,Feuersalamander,FALSE
+59467,Salamandra salamandra,Hungarian,Foltos szalamandra,FALSE
+59467,Salamandra salamandra,Hungarian,Foltos szalamandra,FALSE
+59467,Salamandra salamandra,Slovenian,Navadni močerad,FALSE
+59467,Salamandra salamandra,Russian,Obyknovennaya Salamandra,FALSE
+59467,Salamandra salamandra,Bosnian,Pjegavi daždevnjak,FALSE
+59467,Salamandra salamandra,Romanian,Salamandra,FALSE
+59467,Salamandra salamandra,Spanish; Castilian,Salamandra Común,FALSE
+59467,Salamandra salamandra,Italian,Salamandra Pezzata,FALSE
+59467,Salamandra salamandra,Polish,Salamandra Plamista,FALSE
+59467,Salamandra salamandra,French,Salamandre tachetée,FALSE
+59467,Salamandra salamandra,Serbian,Šareni daždevnjak,FALSE
+59467,Salamandra salamandra,Croatian,Šareni daždevnjak,FALSE
+59467,Salamandra salamandra,"Greek, Modern (1453-)",Σαλαμάνδρα,FALSE
+59467,Salamandra salamandra,Bulgarian,Дъждовник,FALSE
+59467,Salamandra salamandra,Macedonian,Шарен дождовник,FALSE
+59467,Salamandra salamandra,English,Common Fire Salamander,TRUE
+59477,Triturus marmoratus,Spanish; Castilian,Tritón Jaspeado,FALSE
+59477,Triturus marmoratus,English,Marbled Newt,TRUE
+136131,Calotriton arnoldi,English,Montseny Newt,FALSE
+136131,Calotriton arnoldi,English,Montseny Brook Newt,TRUE
+136135,Salamandrina perspicillata,Italian,Salamandrina settentrionale,FALSE
+136135,Salamandrina perspicillata,English,Northern Spectacled Salamander,TRUE
+214696589,Triturus carnifex,English,Alpine Crested Newt,FALSE
+214696589,Triturus carnifex,English,Alpine Warty Newt,FALSE
+214696589,Triturus carnifex,English,Vienna Newt,FALSE
+214696589,Triturus carnifex,Hungarian,Alpesi tarajosgőte,FALSE
+214696589,Triturus carnifex,Czech,Čolek dravý,FALSE
+214696589,Triturus carnifex,German,Italienischer Kammolch,FALSE
+214696589,Triturus carnifex,Italian,Tritone Crestato Italiano,FALSE
+214696589,Triturus carnifex,Bosnian,Veliki (italijanski) krestasti vodenjak,FALSE
+214696589,Triturus carnifex,Slovenian,Veliki pupek,FALSE
+214696589,Triturus carnifex,Croatian,Veliki vodenjak,FALSE
+214696589,Triturus carnifex,English,Italian Crested Newt,TRUE

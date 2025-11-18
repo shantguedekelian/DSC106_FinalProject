@@ -1,0 +1,215 @@
+internal_taxon_id,internal_taxon_name,language,name,primary
+2865,Bombina bombina,Romanian,Buhai de balta cu burta roșie,false
+2865,Bombina bombina,Croatian,Crveni mukač,false
+2865,Bombina bombina,Serbian,Crvenotrbi mukač,false
+2865,Bombina bombina,Turkish,Kırmızılı Kurbağa,false
+2865,Bombina bombina,Russian,Krasnobrykhaya Zherlyanka,false
+2865,Bombina bombina,Polish,Kumak Nizinny,false
+2865,Bombina bombina,Czech,Kuňka obecná,false
+2865,Bombina bombina,Slovenian,Nižinski ugh,false
+2865,Bombina bombina,German,Rotbauchunke,false
+2865,Bombina bombina,Italian,Ululone Dal Ventre Giallo,false
+2865,Bombina bombina,Hungarian,Vöröshasú unka,false
+2865,Bombina bombina,"Greek, Modern (1453-)",Κοκκινομπομπίνα,false
+2865,Bombina bombina,English,Fire-bellied Toad,true
+22212,Triturus cristatus,English,Northern Crested Newt,false
+22212,Triturus cristatus,Russian,Grebenchatyi Triton,false
+22212,Triturus cristatus,Hungarian,Közönséges tarajosgőte,false
+22212,Triturus cristatus,German,Nördlicher Kammmolch,false
+22212,Triturus cristatus,Serbian,Oбични велики мрмољак,false
+22212,Triturus cristatus,Polish,Traszka Grzebieniasta,false
+22212,Triturus cristatus,English,Great Crested Newt,true
+41241,Lyciasalamandra luschani,Turkish,Likya Kara Semenderi,false
+41241,Lyciasalamandra luschani,"Greek, Modern (1453-)",σαλαμάνδρα του Καστελλόριζου,false
+41241,Lyciasalamandra luschani,English,Luschan's Salamander,true
+54703,Sclerophrys mauritanica,English,Berber Toad,false
+54703,Sclerophrys mauritanica,English,Moorish Toad,false
+54703,Sclerophrys mauritanica,French,Crapaud de Maurétanie,false
+54703,Sclerophrys mauritanica,Spanish; Castilian,Sapo Moruno,false
+54703,Sclerophrys mauritanica,Arabic,علجوم مغاربي,false
+54703,Sclerophrys mauritanica,English,Moroccan Toad,true
+55270,Discoglossus pictus,French,Discoglosse Peint,false
+55270,Discoglossus pictus,Italian,Discoglosso Dipinto,false
+55270,Discoglossus pictus,Spanish; Castilian,Sapillo Pintojo Mediterráneo o Argelino,false
+55270,Discoglossus pictus,English,Painted Frog,true
+58054,Pelobates varaldii,English,Moroccan Spadefoot Toad,false
+58054,Pelobates varaldii,French,Pélobate de Varaldi,false
+58054,Pelobates varaldii,French,Pélobate Marocain,false
+58054,Pelobates varaldii,English,Varaldi’s Spadefoot Toad,true
+58548,Rana arvalis,English,Altai Brown Frog (Altai Mountains Populations),false
+58548,Rana arvalis,English,Siberian Frog,false
+58548,Rana arvalis,Slovenian,Barska Saba,false
+58548,Rana arvalis,Romanian,Broasca de mlaștină,false
+58548,Rana arvalis,Hungarian,Mocsári béka,false
+58548,Rana arvalis,Croatian,Močvarna smeđa žaba,false
+58548,Rana arvalis,German,Moorfrosch,false
+58548,Rana arvalis,Russian,Ostromordaya Lyagushka,false
+58548,Rana arvalis,Czech,Skokan ostronosý,false
+58548,Rana arvalis,Polish,Zaba Moczarowa,false
+58548,Rana arvalis,Chinese,田野蛙,false
+58548,Rana arvalis,English,Moor Frog,true
+58565,Aquarana catesbeianus,English,Bullfrog,false
+58565,Aquarana catesbeianus,English,Common Bullfrog,false
+58565,Aquarana catesbeianus,French,Grenouille-taureau,false
+58565,Aquarana catesbeianus,Spanish; Castilian,Rana Toro,false
+58565,Aquarana catesbeianus,Italian,Rana Toro,false
+58565,Aquarana catesbeianus,Japanese,Ushigaeru,false
+58565,Aquarana catesbeianus,"Greek, Modern (1453-)",Βουβαλοβάτραχος,false
+58565,Aquarana catesbeianus,English,American Bullfrog,true
+58584,Rana dalmatina,Turkish,Çevik Kurbağa,false
+58584,Rana dalmatina,Hungarian,Erdei béka,false
+58584,Rana dalmatina,Russian,Prytkaya Lyagushka,false
+58584,Rana dalmatina,Spanish; Castilian,Rana Ágil,false
+58584,Rana dalmatina,Italian,Rana Agile,false
+58584,Rana dalmatina,Italian,Rana Dalmatina,false
+58584,Rana dalmatina,Polish,Zaba Dalmatynska,false
+58584,Rana dalmatina,Polish,Zaba Zwinka,false
+58584,Rana dalmatina,"Greek, Modern (1453-)",Ευκίνητος Βάτραχος,false
+58584,Rana dalmatina,Macedonian,Горска жаба,false
+58584,Rana dalmatina,English,Agile Frog,true
+58705,Pelophylax ridibundus,English,Eurasian Marsh Frog,false
+58705,Pelophylax ridibundus,Hungarian,Nagy tavibéka,false
+58705,Pelophylax ridibundus,Turkish,Ova Kurbağası,false
+58705,Pelophylax ridibundus,Russian,Ozernaya Lyagushka,false
+58705,Pelophylax ridibundus,Italian,Rana Ridibonda,false
+58705,Pelophylax ridibundus,Polish,Zaba Smieszka,false
+58705,Pelophylax ridibundus,"Greek, Modern (1453-)",Λιμνοβάτραχος,false
+58705,Pelophylax ridibundus,Macedonian,Обична езерска жаба,false
+58705,Pelophylax ridibundus,English,Marsh Frog,true
+58707,Pelophylax saharicus,English,Sahara Frog,false
+58707,Pelophylax saharicus,French,Grenouille d’Afrique du Nord,false
+58707,Pelophylax saharicus,French,Grenouille saharienne,false
+58707,Pelophylax saharicus,French,Grenouille Verte d’Afrique du Nord,false
+58707,Pelophylax saharicus,Spanish; Castilian,Rana Verde Norteafricana,false
+58707,Pelophylax saharicus,Arabic,ضفدع أخضر مغاربي,false
+58707,Pelophylax saharicus,English,North African Green Frog,true
+59463,Pleurodeles waltl,English,Ribbed Newt,false
+59463,Pleurodeles waltl,English,Ribbed Salamander,false
+59463,Pleurodeles waltl,English,Spanish Newt,false
+59463,Pleurodeles waltl,English,Spanish Ribbed Newt,false
+59463,Pleurodeles waltl,Spanish; Castilian,Gallipato,false
+59463,Pleurodeles waltl,Catalan; Valencian,"Ofegabous, Peix marí",false
+59463,Pleurodeles waltl,French,Pleurodèles de Waltl,false
+59463,Pleurodeles waltl,German,Spanischer Rippenmolch,false
+59463,Pleurodeles waltl,French,Triton d’Espagne,false
+59463,Pleurodeles waltl,French,Triton de Waltl,false
+59463,Pleurodeles waltl,English,Sharp-ribbed Salamander,true
+59464,Salamandra algira,German,Algerischer Feuersalamander,false
+59464,Salamandra algira,Spanish; Castilian,Salamandra Norteafricana,false
+59464,Salamandra algira,French,Salamandre Algire,false
+59464,Salamandra algira,English,North African Fire Salamander,true
+58893474,Pelophylax bedriagae,English,Bedriaga's Marsh Frog,false
+58893474,Pelophylax bedriagae,English,Levant Green Frog,false
+58893474,Pelophylax bedriagae,English,Levantine Green Frog,false
+58893474,Pelophylax bedriagae,English,Levant Water Frog,false
+58893474,Pelophylax bedriagae,German,Bedriagas Wasserfrosch,false
+58893474,Pelophylax bedriagae,Turkish,Levanten kurbağası,false
+58893474,Pelophylax bedriagae,German,Levante-Wasserfrosch,false
+58893474,Pelophylax bedriagae,German,Türkische Wasserfrosch,false
+58893474,Pelophylax bedriagae,"Greek, Modern (1453-)",Ασιατικός Βάτραχος,false
+58893474,Pelophylax bedriagae,English,Bedriaga's Frog,true
+78928690,Hyla savignyi,English,Middle East Tree Frog,false
+78928690,Hyla savignyi,English,Savigny's Treefrog,false
+78928690,Hyla savignyi,Persian,Darvag,false
+78928690,Hyla savignyi,Russian,Maloaziatskaya Kvaksha,false
+78928690,Hyla savignyi,Turkish,Yeşil Kurbağa,false
+78928690,Hyla savignyi,English,Lemon-Yellow Tree Frog,true
+82494309,Hyla orientalis,English,Caucasian Treefrog,false
+82494309,Hyla orientalis,English,Eastern Tree Frog,false
+82494309,Hyla orientalis,English,Oriental Tree Frog,false
+82494309,Hyla orientalis,Turkish,Ağaç Kurbağası,false
+82494309,Hyla orientalis,Russian,Vostochnaya  Kvaksha,false
+82494309,Hyla orientalis,"Greek, Modern (1453-)",Ανατολικός δενδροβάτραχος,false
+82494309,Hyla orientalis,English,Shelkovnikov's Tree Frog,true
+88103927,Triturus ivanbureschi,English,Balkan–Anatolian Crest Newt,false
+88103927,Triturus ivanbureschi,English,Balkan Crested Newt,false
+88103927,Triturus ivanbureschi,Turkish,Pürtüklü Semender,false
+88103927,Triturus ivanbureschi,"Greek, Modern (1453-)",Βαλκανικός τρίτωνας,false
+88103927,Triturus ivanbureschi,Macedonian,Балкански мрморец,false
+88103927,Triturus ivanbureschi,Bulgarian,Балкански тритон,false
+88103927,Triturus ivanbureschi,Serbian,Бурешов дугоноги велики мрмољак,false
+88103927,Triturus ivanbureschi,English,Buresch's Crested New,true
+88316046,Bufo spinosus,English,Western Common Toad,false
+88316046,Bufo spinosus,French,Crapaud épineux,false
+88316046,Bufo spinosus,Portuguese,Sapo comum,false
+88316046,Bufo spinosus,Spanish; Castilian,Sapo común,false
+88316046,Bufo spinosus,English,Spiny Toad,true
+88316072,Bufo bufo,English,Common European Toad,false
+88316072,Bufo bufo,Arabic,Aljoum,false
+88316072,Bufo bufo,Hungarian,Barna varangy,false
+88316072,Bufo bufo,Romanian,Broasca râioasă brună,false
+88316072,Bufo bufo,French,Crapaud commun,false
+88316072,Bufo bufo,French,Crapaud vulgaire,false
+88316072,Bufo bufo,German,Erdkröte,false
+88316072,Bufo bufo,Slovenian,Navadna krastača,false
+88316072,Bufo bufo,Russian,Obyknovennaya Zhaba,false
+88316072,Bufo bufo,Czech,Ropucha obecná,false
+88316072,Bufo bufo,Polish,Ropucha Szara,false
+88316072,Bufo bufo,Italian,Rospo Comune,false
+88316072,Bufo bufo,Turkish,Siğilli Kurbağa,false
+88316072,Bufo bufo,Croatian,Smeđa krastača,false
+88316072,Bufo bufo,"Greek, Modern (1453-)",Χωματόφρυνος,false
+88316072,Bufo bufo,Macedonian,Голема крастава жаба,false
+88316072,Bufo bufo,Serbian,Обична крастача,false
+88316072,Bufo bufo,Albanian,Тhithlopa,false
+88316072,Bufo bufo,English,Common Toad,true
+110466172,Xenopus laevis,English,African Clawed Toad,false
+110466172,Xenopus laevis,English,Clawed Frog,false
+110466172,Xenopus laevis,English,Clawed Toad,false
+110466172,Xenopus laevis,English,Common Clawed Frog,false
+110466172,Xenopus laevis,English,Common Clawed Toad,false
+110466172,Xenopus laevis,English,Common Platanna,false
+110466172,Xenopus laevis,English,Platanna,false
+110466172,Xenopus laevis,English,Smooth Clawed Frog,false
+110466172,Xenopus laevis,English,African Clawed Frog,true
+136687833,Salamandrella keyserlingii,English,Dybowski's Salamander,false
+136687833,Salamandrella keyserlingii,English,Manchurian Salamander,false
+136687833,Salamandrella keyserlingii,English,Siberian Newt,false
+136687833,Salamandrella keyserlingii,Japanese,Kitasanshouo,false
+136687833,Salamandrella keyserlingii,Russian,Sibirskii Uglozub,false
+136687833,Salamandrella keyserlingii,English,Siberian Salamander,true
+172313717,Pelobates syriacus,English,Eastern Spadefoot,false
+172313717,Pelobates syriacus,English,Syrian Spade-foot Toad,false
+172313717,Pelobates syriacus,Turkish,Toprak Kurbağası,false
+172313717,Pelobates syriacus,"Greek, Modern (1453-)",Πηλοβάτης,false
+172313717,Pelobates syriacus,English,Syrian Spadefoot,true
+173101508,Rana temporaria,German,Grasfrosch,false
+173101508,Rana temporaria,French,Grenouille rousse,false
+173101508,Rana temporaria,Hungarian,Gyepi béka,false
+173101508,Rana temporaria,Swedish,Vanlik Groda,false
+173101508,Rana temporaria,"Greek, Modern (1453-)",Βουνοβάτραχος,false
+173101508,Rana temporaria,Serbian,Жаба травњача,false
+173101508,Rana temporaria,English,European Common Frog,true
+173109790,Hyla meridionalis,Italian,Raganella Mediterranea,false
+173109790,Hyla meridionalis,French,Rainettes meridionales,false
+173109790,Hyla meridionalis,Spanish; Castilian,Ranita merdional,false
+173109790,Hyla meridionalis,English,Stripeless Treefrog,true
+182525327,Bufotes boulengeri,French,Crapaud vert de l'Afrique du nord,false
+182525327,Bufotes boulengeri,French,Crapauid de Boulenger,false
+182525327,Bufotes boulengeri,Arabic,علجوم أخضر افريقي,false
+182525327,Bufotes boulengeri,English,African Green Toad,true
+182530066,Bufotes viridis,English,European Green Toad,false
+182530066,Bufotes viridis,English,Πρασινόφρυνος,false
+182530066,Bufotes viridis,Arabic,Aljoum Akhdar,false
+182530066,Bufotes viridis,French,Crapaud vert,false
+182530066,Bufotes viridis,Turkish,Gece Kurbağası,false
+182530066,Bufotes viridis,Polish,Ropucha Zielona,false
+182530066,Bufotes viridis,Italian,Rospo Smeraldino,false
+182530066,Bufotes viridis,Spanish; Castilian,Sapo Verde,false
+182530066,Bufotes viridis,Russian,Zelenaya Zhaba,false
+182530066,Bufotes viridis,Hungarian,Zöld varangy,false
+182530066,Bufotes viridis,Macedonian,Зелена крастава жаба,false
+182530066,Bufotes viridis,English,Green Toad,true
+196236041,Pelobates vespertinus,English,Pallas' Spadefoot Toad,true
+211146190,Triturus karelinii,English,Balkan Crested Newt,false
+211146190,Triturus karelinii,English,Caucasian Crested Newt,false
+211146190,Triturus karelinii,English,Karelin's Newt,false
+211146190,Triturus karelinii,Turkish,Pürtüklü Semender,false
+211146190,Triturus karelinii,German,Südlicher Kammolch,false
+211146190,Triturus karelinii,Russian,Triton Karelina,false
+211146190,Triturus karelinii,Macedonian,Балкански мрморец,false
+211146190,Triturus karelinii,English,Southern Crested Newt,true
+211757868,Lissotriton schmidtleri,English,Turkish Smooth Newt,false
+211757868,Lissotriton schmidtleri,Turkish,Cüce Semender,false
+211757868,Lissotriton schmidtleri,"Greek, Modern (1453-)",Ανατολικός Λισσοτρίτωνας,false
+211757868,Lissotriton schmidtleri,English,Schmidtler's Smooth Newt,true
