@@ -1,26 +1,3 @@
-infraType,infrarankAuthor,infrarankName,internal_taxon_id,internal_taxon_name,name,speciesAuthor,speciesName
-,,,977,Alytes muletensis,"Baleaphryne muletensis Sanchíz & Adrover, 1979","Sanchíz & Adrover, 1979",muletensis
-,,,8371,Euproctus platycephalus,"Molge platycephala Gravenhorst, 1829","Gravenhorst, 1829",platycephala
-,,,8371,Euproctus platycephalus,"Euproctus rusconii Gené, 1839","Gené, 1839",rusconii
-subspecies,"Stefani, 1969",flavus,20455,Speleomantes flavus,"Hydromantes genei ssp. flavus Stefani, 1969",,genei
-,,,20456,Speleomantes genei,"Atylodes genei (Temminck & Schlegel, 1838)","(Temminck & Schlegel, 1838)",genei
-,,,20456,Speleomantes genei,"Salamandra genei Temminck & Schlegel, 1838","Temminck & Schlegel, 1838",genei
-subspecies,"Stefani, 1969",imperialis,20457,Speleomantes imperialis,"Hydromantes genei ssp. imperialis Stefani, 1969",,genei
-,,,20459,Speleomantes supramontis,"Hydromantes supramontis Lanza, Nascetti & Bullini, 1986","Lanza, Nascetti & Bullini, 1986",supramontis
-,,,55645,Hyla sarda,"Dendrohyas sarda De Betta, 1853","De Betta, 1853",sarda
-,,,58567,Pelophylax cerigensis,"Rana cerigensis Beerli, Hotz, Tunner, Heppich & Uzzell, 1994","Beerli, Hotz, Tunner, Heppich & Uzzell, 1994",cerigensis
-,,,58581,Pelophylax cretensis,"Rana cretensis Beerli, Hotz, Tunner, Heppich & Uzzell, 1994","Beerli, Hotz, Tunner, Heppich & Uzzell, 1994",cretensis
-,,,58592,Pelophylax epeiroticus,"Pelophylax epeirotica Schneider, Sofianidou & Kyriakopoulou-Sklavounou, 1984","Schneider, Sofianidou & Kyriakopoulou-Sklavounou, 1984",epeirotica
-,,,58592,Pelophylax epeiroticus,"Rana epeirotica Schneider, Sofianidou & Kyriakopoulou-Sklavounou, 1984","Schneider, Sofianidou & Kyriakopoulou-Sklavounou, 1984",epeirotica
-subspecies,"Dubois, 1987",italica,58624,Rana italica,"Rana graeca ssp. italica Dubois, 1987",,graeca
-,,,58715,Pelophylax shqipericus,"Rana shqiperica Hotz, Uzzell, Guenther, Tunner & Heppich, 1987","Hotz, Uzzell, Guenther, Tunner & Heppich, 1987",shqiperica
-,,,59449,Euproctus montanus,"Megapterna montana Savi, 1838","Savi, 1838",montana
-subspecies,"Savi, 1838",corsica,59465,Salamandra corsica,"Salamandra salamandra ssp. corsica Savi, 1838",,salamandra
-,,,59468,Salamandrina terdigitata,"Salamandra  tridactyla  Daudin, 1803","Daudin, 1803",tridactyla 
-,,,59468,Salamandrina terdigitata,"Molge  tridactyla (Daudin, 1803)","(Daudin, 1803)",tridactyla
-,,,59468,Salamandrina terdigitata,"Triton  tridactylus (Daudin, 1803)","(Daudin, 1803)",tridactylus
-,,,59468,Salamandrina terdigitata,"Salamandra  ter-digitata  Bonnaterre, 1789","Bonnaterre, 1789",ter-digitata 
-,,,59476,Lissotriton italicus,"Triturus italicus (Peracca, 1898)","(Peracca, 1898)",italicus
-,,,59476,Lissotriton italicus,"Molge italica Peracca, 1898","Peracca, 1898",italica
-subspecies,"Pieper, 1963",helverseni,61918,Lyciasalamandra helverseni,"Mertensiella luschani ssp. helverseni Pieper, 1963",,luschani
-,,,79079357,Lissotriton maltzani,"Triton maltzani Boettger, 1879","Boettger, 1879",maltzani
+version https://git-lfs.github.com/spec/v1
+oid sha256:3537cc5b64eca9e80edc682f47ca17c201c7e193d0f23560fde62f52d247999b
+size 3003
