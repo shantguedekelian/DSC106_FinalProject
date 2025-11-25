@@ -146,3 +146,69 @@ img {
   stroke-width: 3px;
   fill: rgb(255, 179, 0);
 }
+
+/* Scrolly */
+
+#scrolly {
+  display: flex;
+  /* width: 100%; */
+  position: relative;
+  width: 75vw;            /* full browser width */
+  margin-left: 50%;        /* counteract parent centering */
+  transform: translateX(-50%);
+  max-width: none;         /* disable the html max-width rule */
+  padding: 0 2rem;         /* keep some breathing room */
+}
+
+#graphic {
+  position: sticky;
+  top: 20px;
+  height: 80vh;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#vis {
+  width: 90%;
+  height: 90%;
+}
+
+#steps {
+  flex: 0.6;
+  padding: 0 2rem;
+}
+
+.step {
+  margin: 3.5rem 0;        /* MORE vertical spacing */
+  padding: 2rem 1.5rem;    /* More breathing room inside */
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  border-left: 3px solid #ccc;
+  background: var(--color-neutral-95); /* subtle card feel */
+  border-radius: 0.4rem;              /* soft corners */
+
+  min-height: 80vh;      /* Each step occupies a full screen */
+  display: flex;
+  align-items: center;   /* Centers text vertically (looks nice too) */
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+}
+
+.step.is-active {
+  border-left-color: var(--color-neutral-30);
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.step.is-exiting {
+  opacity: 0;
+  transform: translateY(-20px);
+}
