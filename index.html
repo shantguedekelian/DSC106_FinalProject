@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="main.css">
+    <script src="global.js" type="module" defer></script>
 </head>
 
 <body>
@@ -25,6 +26,7 @@
         </div>
     </section>
 
+    
     <div id="controls">
         <label>Temperature Rise (°C):
             <input id="tempSlider" type="range" min="0" max="4" step="0.1" value="0">
@@ -40,11 +42,18 @@
             <input id="co2Slider" type="range" min="0" max="200" step="10" value="0">
             <span id="co2Value">0</span>
         </label>
+
+        <label>
+            <input id="reptileCheck" type="checkbox" value="REPTILIA" checked> Reptilia
+        </label>
+        
+        <label>
+            <input id="amphibianCheck" type="checkbox" value="AMPHIBIA" checked> Amphibia
+        </label>
     </div>
 
     <svg id="risk_plot"></svg>
     <svg id="group_scatter"></svg>
-    <script src="global.js" type="module"></script>
 </body>
 
 </html>

@@ -20,6 +20,7 @@ async function loadData() {
     try {
         const specieData = await d3.csv('cleaned_data.csv');
         specieData.forEach(d => {
+            d.taxon = d.taxon.toUpperCase();
             d.risk_score = +d.risk_score;
             d.temp_sensitivity = +d.temp_sensitivity;
             d.habitat_loss_sens = +d.habitat_loss_sens;
@@ -31,6 +32,9 @@ async function loadData() {
     }
 }
 const specieData = await loadData();
+const vertebrates = Array.from(new Set(specieData.map(d => d.taxon)));
+const classes = ["LC", "NT", "VU", "EN", "CR", "EX"];
+
 
 // scrolly: store chart functions
 const charts = {
@@ -92,6 +96,40 @@ function drawConclusion() {
         .text("Final insights on species risk under climate scenarios");
 }
 
+const color = d3.scaleOrdinal()
+    .domain(vertebrates)
+    .range(["steelblue", "hotpink"]);
+
+let selectedCheck = new Set(vertebrates);  // e.g. {"AMPHIBIAN", "REPTILE"}
+
+function getFilteredData() {
+    return specieData.filter(d => selectedCheck.has(d.taxon));
+}
+    
+function handleCheckboxChange() {
+    const taxon = this.value;   // "REPTILE" or "AMPHIBIAN"
+
+    if (this.checked) {
+        selectedCheck.add(taxon);
+    } else {
+        selectedCheck.delete(taxon);
+    }
+
+    console.log("Checkbox changed:", this.id, "checked:", this.checked);
+    console.log("selectedCheck =", Array.from(selectedCheck));
+
+    updateAll();
+}
+
+// explicit bindings
+d3.select("#reptileCheck").on("change", handleCheckboxChange);
+d3.select("#amphibianCheck").on("change", handleCheckboxChange);
+
+console.log(
+  "checkbox count =",
+  d3.selectAll('input[type="checkbox"]').size()
+);
+
 
 // sliders
 d3.select("#tempSlider").on("input", updateAll);
@@ -103,7 +141,7 @@ function updateAll() {
     d3.select("#habValue").text(d3.select("#habSlider").node().value);
     d3.select("#co2Value").text(d3.select("#co2Slider").node().value);
 
-    const updated = computeUpdatedSpecies(specieData);
+    const updated = computeUpdatedSpecies(getFilteredData());
     drawRiskBars(updated);
     drawGroupScatter(updated);
 }
@@ -142,23 +180,28 @@ function computeUpdatedSpecies(data) {
 }
 
 function drawRiskBars(data) {
+
+    data = computeUpdatedSpecies(data);
     risk_plot.selectAll("*").remove();
 
-    const categories = ["LC", "NT", "VU", "EN", "CR", "EX"];
+    const barData = [];
+    vertebrates.forEach(taxon => {
+        classes.forEach(cat => {
+            const count = data.filter(d =>
+                d.updated_category === cat &&
+                d.taxon === taxon
+            ).length;
 
-    let counts = d3.rollup(
-        data,
-        v => v.length,
-        d => d.updated_category
-    );
-
-    const barData = categories.map(c => ({
-        category: c,
-        count: counts.get(c) || 0
-    }));
+            barData.push({
+                category: cat,
+                taxon: taxon,
+                count: count
+            });
+        });
+    });
 
     const x = d3.scaleBand()
-        .domain(categories)
+        .domain(classes)
         .range([100, width - 100])
         .padding(0.2);
 
@@ -175,15 +218,16 @@ function drawRiskBars(data) {
         .call(d3.axisLeft(y));
 
     risk_plot.selectAll("rect")
-        .data(barData)
-        .enter()
-        .append("rect")
+        .data(barData.filter(d => selectedCheck.has(d.taxon)))
+        .join("rect")
         .attr("x", d => x(d.category))
         .attr("y", d => y(d.count))
         .attr("width", x.bandwidth())
         .attr("height", d => (height - 50) - y(d.count))
-        .attr("fill", "steelblue");
+        .attr("fill", d => color(d.taxon))
+        .style("opacity", 0.5);
 }
+
 
 function drawGroupScatter(data) {
     const svg = d3.select("#group_scatter")
