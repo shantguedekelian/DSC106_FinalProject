@@ -18,13 +18,10 @@ const risk_plot = d3.select("#risk_plot")
 // --- Load data ---
 async function loadData() {
     try {
-        console.log('hello');
         const specieData = await d3.csv('cleaned_data.csv');
-        console.log('hi');
-        console.log("CSV keys:", Object.keys(specieData[0]));
 
         specieData.forEach(d => {
-            //d.taxon = d.taxon.toUpperCase();
+            d.taxon = d.taxon.toUpperCase();
             d.risk_score = +d.risk_score;
             d.temp_sensitivity = +d.temp_sensitivity;
             d.habitat_loss_sens = +d.habitat_loss_sens;
