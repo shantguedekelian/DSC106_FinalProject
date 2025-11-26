@@ -43,6 +43,7 @@ const charts = {
     3: () => drawGroupScatter(specieData),
     4: () => drawConclusion()
     // Add more steps as needed
+    // 5: () => yourFunction()
 };
 
 function showChart(stepNum) {
@@ -84,15 +85,15 @@ function drawIntro() {
     vis.append("text")
         .attr("x", 100)
         .attr("y", 200)
-        .style("font-size", "30px")
+        .style("font-size", "125%")
         .text("Scroll to explore species risk changes");
 }
 // scrolly: outro
 function drawConclusion() {
     vis.append("text")
-        .attr("x", 80)
+        .attr("x", 40)
         .attr("y", 200)
-        .style("font-size", "28px")
+        .style("font-size", "125%")
         .text("Final insights on species risk under climate scenarios");
 }
 
