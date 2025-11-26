@@ -24,7 +24,7 @@ async function loadData() {
         console.log("CSV keys:", Object.keys(specieData[0]));
 
         specieData.forEach(d => {
-            d.taxon = d.taxon.toUpperCase();
+            //d.taxon = d.taxon.toUpperCase();
             d.risk_score = +d.risk_score;
             d.temp_sensitivity = +d.temp_sensitivity;
             d.habitat_loss_sens = +d.habitat_loss_sens;
