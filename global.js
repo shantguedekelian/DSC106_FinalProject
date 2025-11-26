@@ -19,6 +19,8 @@ const risk_plot = d3.select("#risk_plot")
 async function loadData() {
     try {
         const specieData = await d3.csv('cleaned_data.csv');
+        console.log("CSV keys:", Object.keys(specieData[0]));
+
         specieData.forEach(d => {
             d.taxon = d.taxon.toUpperCase();
             d.risk_score = +d.risk_score;
