@@ -5,16 +5,20 @@ import scrollama from 'https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm';
 const width = 900;
 const height = 600;
 let activeTimer = null;
+let activeChart = "both"; 
 
 
 const vis = d3.select("#vis")
     .attr("width", width)
     .attr("height", height);
 
+const barLayer = vis.append("g");
+const scatterLayer = vis.append("g");
+
 // interactive plots, these go below the scrollytelling
-const risk_plot = d3.select("#risk_plot")
-    .attr("width", width)
-    .attr("height", height);
+// const risk_plot = d3.select("#vis")
+//     .attr("width", width)
+//     .attr("height", height);
 
 
 // --- Load data ---
@@ -52,9 +56,18 @@ const charts = {
 };
 
 function showChart(stepNum) {
-    if (activeTimer) activeTimer.stop();
-    d3.select("#vis").selectAll("*").remove();
+    if (activeTimer) {
+        activeTimer.stop();
+        activeTimer = null;
+    }
+
+    unbindSliders();
+
+    barLayer.selectAll("*").remove();
+    scatterLayer.selectAll("*").remove();
     charts[stepNum]();
+    
+    bindSliders();
 }
 
 // scrolly: scrolly setup
@@ -117,21 +130,15 @@ function animateSlider({
 
 function updateRiskWithTemp(val) {
     d3.select("#tempSlider").property("value", val);
-    d3.select("#habSlider").property("value", 0);
-    d3.select("#co2Slider").property("value", 0);
     updateAll();
 }
 
 function updateRiskWithHab(val) {
-    d3.select("#tempSlider").property("value", 0);
     d3.select("#habSlider").property("value", val);
-    d3.select("#co2Slider").property("value", 0);
     updateAll();
 }
 
 function updateRiskWithCO2(val) {
-    d3.select("#tempSlider").property("value", 0);
-    d3.select("#habSlider").property("value", 0);
     d3.select("#co2Slider").property("value", val);
     updateAll();
 }
@@ -146,7 +153,9 @@ function drawIntro() {
 }
 // scrolly: temp increase animation
 function drawTempIncrease() {
+    activeChart = "bars"; 
     drawRiskBars(specieData);
+    //drawGroupScatter(specieData);
 
     animateSlider({
         sliderId: "#tempSlider",
@@ -160,7 +169,10 @@ function drawTempIncrease() {
 
 // scrolly: habitat loss increase animation
 function drawHabLoss() {
+    activeChart = "bars"; 
     drawRiskBars(specieData);
+    //drawGroupScatter(specieData);
+
 
     animateSlider({
         sliderId: "#habSlider",
@@ -174,7 +186,9 @@ function drawHabLoss() {
 
 // scrolly: co2 increase animation
 function drawCarbonIncrease() {
+    activeChart = "bars"; 
     drawRiskBars(specieData);
+    //drawGroupScatter(specieData);
 
     animateSlider({
         sliderId: "#co2Slider",
@@ -232,9 +246,17 @@ console.log(
 
 
 // sliders
-d3.select("#tempSlider").on("input", updateAll);
-d3.select("#habSlider").on("input", updateAll);
-d3.select("#co2Slider").on("input", updateAll);
+function bindSliders() {
+    d3.select("#tempSlider").on("input", updateAll);
+    d3.select("#habSlider").on("input", updateAll);
+    d3.select("#co2Slider").on("input", updateAll);
+}
+
+function unbindSliders() {
+    d3.select("#tempSlider").on("input", null);
+    d3.select("#habSlider").on("input", null);
+    d3.select("#co2Slider").on("input", null);
+}
 
 function updateAll() {
     d3.select("#tempValue").text(d3.select("#tempSlider").node().value);
@@ -242,8 +264,19 @@ function updateAll() {
     d3.select("#co2Value").text(d3.select("#co2Slider").node().value);
 
     const updated = computeUpdatedSpecies(getFilteredData());
-    drawRiskBars(updated);
-    drawGroupScatter(updated);
+
+    if (activeChart === "bars") {
+        drawRiskBars(updated);
+    }
+
+    if (activeChart === "scatter") {
+        drawGroupScatter(updated);
+    }
+
+    if (activeChart === "both") {
+        drawRiskBars(updated);
+        drawGroupScatter(updated);
+    }
 }
 
 function computeRisk(d) {
@@ -280,6 +313,7 @@ function computeUpdatedSpecies(data) {
 }
 
 function drawRiskBars(data) {
+    barLayer.selectAll("*").remove();
 
     data = computeUpdatedSpecies(data);
 
@@ -308,23 +342,22 @@ function drawRiskBars(data) {
         .domain([0, 80])
         .range([height - 50, 50]);
 
-    risk_plot.append("g")
+    barLayer.append("g")
         .attr("transform", `translate(0, ${height - 50})`)
         .call(d3.axisBottom(x));
 
-    risk_plot.append("g")
+    barLayer.append("g")
         .attr("transform", `translate(100,0)`)
         .call(d3.axisLeft(y));
 
-    risk_plot.selectAll("rect")
+    barLayer.selectAll("rect")
         .data(barData.filter(d => selectedCheck.has(d.taxon)))
         .join(
             enter => enter.append("rect"),
             update => update,
             exit => exit.remove()
         )
-        .transition()
-        .duration(200)
+        .interrupt()
         .attr("x", d => x(d.category))
         .attr("y", d => y(d.count))
         .attr("width", x.bandwidth())
@@ -335,11 +368,11 @@ function drawRiskBars(data) {
 
 
 function drawGroupScatter(data) {
-    const svg = d3.select("#group_scatter")
+    const svg = d3.select("#vis")
         .attr("width", width)
         .attr("height", height);
 
-    svg.selectAll("*").remove();
+    scatterLayer.selectAll("*").remove();
 
     const groups = d3.group(data, d => d.taxon);
 
@@ -359,15 +392,15 @@ function drawGroupScatter(data) {
         .domain([0, 80])
         .range([height - 50, 50]);
 
-    svg.append("g")
+    scatterLayer.append("g")
         .attr("transform", `translate(0, ${height - 50})`)
         .call(d3.axisBottom(x));
 
-    svg.append("g")
+    scatterLayer.append("g")
         .attr("transform", `translate(100,0)`)
         .call(d3.axisLeft(y));
 
-    svg.selectAll("rect")
+    scatterLayer.selectAll("rect")
         .data(result)
         .join("rect")
         .attr("x", d => x(d.group))                  // LEFT EDGE
@@ -376,5 +409,3 @@ function drawGroupScatter(data) {
         .attr("height", d => y(0) - y(d.worsened))   // BAR HEIGHT
         .attr("fill", d => color(d.group));          // FIXED COLOR TARGET
 }
-
-updateAll();
