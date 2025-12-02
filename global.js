@@ -18,6 +18,7 @@ const risk_plot = d3.select("#risk_plot")
 // --- Load data ---
 async function loadData() {
     try {
+        console.log('hello');
         const specieData = await d3.csv('cleaned_data.csv');
 
         specieData.forEach(d => {
@@ -208,7 +209,7 @@ function drawRiskBars(data) {
         .padding(0.2);
 
     const y = d3.scaleLinear()
-        .domain([0, d3.max(barData, d => d.count)])
+        .domain([0, 80])
         .range([height - 50, 50]);
 
     risk_plot.append("g")
@@ -233,38 +234,45 @@ function drawRiskBars(data) {
 
 function drawGroupScatter(data) {
     const svg = d3.select("#group_scatter")
-        .attr("width", 500)
-        .attr("height", 300);
+        .attr("width", width)
+        .attr("height", height);
 
     svg.selectAll("*").remove();
 
     const groups = d3.group(data, d => d.taxon);
 
+    // NUMBER OF ANIMALS PER GROUP THAT ARE EXTINCT
     let result = [];
     groups.forEach((species, groupName) => {
-        const worsened = species.filter(s => s.updated_category !== s.red_list_category).length;
+        const worsened = species.filter(s => s.updated_category === 'EX').length;
         result.push({ group: groupName, worsened });
     });
 
     const x = d3.scaleBand()
         .domain(result.map(d => d.group))
-        .range([50, 450])
+        .range([100, width - 100])
         .padding(0.3);
 
     const y = d3.scaleLinear()
-        .domain([0, d3.max(result, d => d.worsened)])
-        .range([250, 50]);
+        .domain([0, 80])
+        .range([height - 50, 50]);
 
-    svg.append("g").attr("transform", "translate(0,250)").call(d3.axisBottom(x));
-    svg.append("g").attr("transform", "translate(50,0)").call(d3.axisLeft(y));
+    svg.append("g")
+        .attr("transform", `translate(0, ${height - 50})`)
+        .call(d3.axisBottom(x));
 
-    svg.selectAll("circle")
+    svg.append("g")
+        .attr("transform", `translate(100,0)`)
+        .call(d3.axisLeft(y));
+
+    svg.selectAll("rect")
         .data(result)
-        .enter().append("circle")
-        .attr("cx", d => x(d.group) + x.bandwidth() / 2)
-        .attr("cy", d => y(d.worsened))
-        .attr("r", 8)
-        .attr("fill", "red");
+        .join("rect")
+        .attr("x", d => x(d.group))                  // LEFT EDGE
+        .attr("y", d => y(d.worsened))               // TOP OF BAR
+        .attr("width", x.bandwidth())                // FULL BAND
+        .attr("height", d => y(0) - y(d.worsened))   // BAR HEIGHT
+        .attr("fill", d => color(d.group));          // FIXED COLOR TARGET
 }
 
 updateAll();
