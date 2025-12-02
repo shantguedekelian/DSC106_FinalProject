@@ -2,8 +2,10 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 import scrollama from 'https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm';
 
 
-const width = 1200;
-const height = 800;
+const width = 900;
+const height = 600;
+let activeTimer = null;
+
 
 const vis = d3.select("#vis")
     .attr("width", width)
@@ -50,6 +52,7 @@ const charts = {
 };
 
 function showChart(stepNum) {
+    if (activeTimer) activeTimer.stop();
     d3.select("#vis").selectAll("*").remove();
     charts[stepNum]();
 }
@@ -83,6 +86,56 @@ function setupScroll() {
 }
 setupScroll();
 
+function animateSlider({
+    sliderId,
+    start,
+    end,
+    step = 0.5,
+    delay = 30,
+    onUpdate
+}) {
+    if (activeTimer) activeTimer.stop();
+
+    const slider = d3.select(sliderId);
+    let value = start;
+
+    slider.property("value", value);
+    onUpdate(value);
+
+    activeTimer = d3.interval(() => {
+        value += step;
+
+        if (value >= end) {
+            value = end;
+            activeTimer.stop();
+        }
+
+        slider.property("value", value);
+        onUpdate(value);
+    }, delay);
+}
+
+function updateRiskWithTemp(val) {
+    d3.select("#tempSlider").property("value", val);
+    d3.select("#habSlider").property("value", 0);
+    d3.select("#co2Slider").property("value", 0);
+    updateAll();
+}
+
+function updateRiskWithHab(val) {
+    d3.select("#tempSlider").property("value", 0);
+    d3.select("#habSlider").property("value", val);
+    d3.select("#co2Slider").property("value", 0);
+    updateAll();
+}
+
+function updateRiskWithCO2(val) {
+    d3.select("#tempSlider").property("value", 0);
+    d3.select("#habSlider").property("value", 0);
+    d3.select("#co2Slider").property("value", val);
+    updateAll();
+}
+
 // scrolly: intro
 function drawIntro() {
     vis.append("text")
@@ -92,18 +145,45 @@ function drawIntro() {
         .text("Scroll to explore species risk changes");
 }
 // scrolly: temp increase animation
-function drawTempIncrease(){
+function drawTempIncrease() {
+    drawRiskBars(specieData);
 
+    animateSlider({
+        sliderId: "#tempSlider",
+        start: 0,
+        end: 5,
+        step: 0.05,
+        delay: 30,
+        onUpdate: updateRiskWithTemp
+    });
 }
 
 // scrolly: habitat loss increase animation
-function drawHabLoss(){
+function drawHabLoss() {
+    drawRiskBars(specieData);
 
+    animateSlider({
+        sliderId: "#habSlider",
+        start: 0,
+        end: 5,
+        step: 0.05,
+        delay: 30,
+        onUpdate: updateRiskWithHab
+    });
 }
 
 // scrolly: co2 increase animation
-function drawCarbonIncrease(){
+function drawCarbonIncrease() {
+    drawRiskBars(specieData);
 
+    animateSlider({
+        sliderId: "#co2Slider",
+        start: 0,
+        end: 5,
+        step: 0.05,
+        delay: 30,
+        onUpdate: updateRiskWithCO2
+    });
 }
 
 // scrolly: outro
@@ -202,7 +282,6 @@ function computeUpdatedSpecies(data) {
 function drawRiskBars(data) {
 
     data = computeUpdatedSpecies(data);
-    risk_plot.selectAll("*").remove();
 
     const barData = [];
     vertebrates.forEach(taxon => {
@@ -239,7 +318,13 @@ function drawRiskBars(data) {
 
     risk_plot.selectAll("rect")
         .data(barData.filter(d => selectedCheck.has(d.taxon)))
-        .join("rect")
+        .join(
+            enter => enter.append("rect"),
+            update => update,
+            exit => exit.remove()
+        )
+        .transition()
+        .duration(200)
         .attr("x", d => x(d.category))
         .attr("y", d => y(d.count))
         .attr("width", x.bandwidth())
