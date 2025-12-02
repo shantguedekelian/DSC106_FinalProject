@@ -175,8 +175,9 @@ img {
 
 #vis {
   width: 90%;
-  height: 90%;
+  height: 100%;
   position: relative;
+  margin-top: 100px;
   z-index: 1;
 }
 
