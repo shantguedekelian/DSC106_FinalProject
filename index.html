@@ -117,10 +117,35 @@
     </section>
 
     
-    
+    <section id="sandbox">
+    <div id="sandbox_controls">
+        <label>Temperature Rise (°C):
+            <input id="tempSlider" type="range" min="0" max="4" step="0.1" value="0">
+            <span id="tempValue">0</span>
+        </label><br>
+
+        <label>Habitat Loss (%):
+            <input id="habSlider" type="range" min="0" max="50" step="1" value="0">
+            <span id="habValue">0</span>
+        </label><br>
+
+        <label>CO₂ Increase (ppm):
+            <input id="co2Slider" type="range" min="0" max="200" step="10" value="0">
+            <span id="co2Value">0</span>
+        </label>
+
+        <label>
+            <input id="reptileCheck" type="checkbox" value="REPTILIA" checked> Reptilia
+        </label>
+        
+        <label>
+            <input id="amphibianCheck" type="checkbox" value="AMPHIBIA" checked> Amphibia
+        </label>
+    </div>
 
     <svg id="risk_plot"></svg>
     <svg id="group_scatter"></svg>
+    </section>
 
     <h3> What have you done so far? </h3>
     <p> We have created an interactive bar chart that filters between Amphibians and Reptiles, 

@@ -12,8 +12,15 @@ const vis = d3.select("#vis")
     .attr("width", width)
     .attr("height", height);
 
+const sandboxVis = d3.select("#risk_plot")
+    .attr("width", width)
+    .attr("height", height);
+
 const barLayer = vis.append("g");
 const scatterLayer = vis.append("g");
+
+const sandboxBarLayer = sandboxVis.append("g");
+const sandboxScatterLayer = sandboxVis.append("g");
 
 // interactive plots, these go below the scrollytelling
 // const risk_plot = d3.select("#vis")
@@ -160,7 +167,8 @@ function drawIntro() {
 // scrolly: temp increase animation
 function drawTempIncrease() {
     activeChart = "bars"; 
-    drawRiskBars(specieData);
+    drawRiskBarsScrolly(specieData);
+
     //drawGroupScatter(specieData);
 
     animateSlider({
@@ -176,7 +184,8 @@ function drawTempIncrease() {
 // scrolly: habitat loss increase animation
 function drawHabLoss() {
     activeChart = "bars"; 
-    drawRiskBars(specieData);
+    drawRiskBarsScrolly(specieData);
+
     //drawGroupScatter(specieData);
 
 
@@ -193,7 +202,8 @@ function drawHabLoss() {
 // scrolly: co2 increase animation
 function drawCarbonIncrease() {
     activeChart = "bars"; 
-    drawRiskBars(specieData);
+    drawRiskBarsScrolly(specieData);
+
     //drawGroupScatter(specieData);
 
     animateSlider({
@@ -272,17 +282,20 @@ function updateAll() {
     const updated = computeUpdatedSpecies(getFilteredData());
 
     if (activeChart === "bars") {
-        drawRiskBars(updated);
+        drawRiskBarsScrolly(updated);
     }
 
     if (activeChart === "scatter") {
-        drawGroupScatter(updated);
+        drawGroupScrolly(updated);
     }
 
     if (activeChart === "both") {
-        drawRiskBars(updated);
-        drawGroupScatter(updated);
+        drawRiskBarsScrolly(updated);
+        drawGroupScrolly(updated);
     }
+
+    drawRiskBarsSandbox(updated);
+    drawGroupSandbox(updated);
 }
 
 function computeRisk(d) {
@@ -318,9 +331,17 @@ function computeUpdatedSpecies(data) {
     });
 }
 
-function drawRiskBars(data) {
+function drawRiskBarsScrolly(data) {
     barLayer.selectAll("*").remove();
+    drawBarsIntoLayer(barLayer, data);
+}
 
+function drawRiskBarsSandbox(data) {
+    sandboxBarLayer.selectAll("*").remove();
+    drawBarsIntoLayer(sandboxBarLayer, data);
+}
+
+function drawBarsIntoLayer(layer, data) {
     data = computeUpdatedSpecies(data);
 
     const barData = [];
@@ -331,11 +352,7 @@ function drawRiskBars(data) {
                 d.taxon === taxon
             ).length;
 
-            barData.push({
-                category: cat,
-                taxon: taxon,
-                count: count
-            });
+            barData.push({ category: cat, taxon, count });
         });
     });
 
@@ -348,22 +365,17 @@ function drawRiskBars(data) {
         .domain([0, 80])
         .range([height - 50, 50]);
 
-    barLayer.append("g")
+    layer.append("g")
         .attr("transform", `translate(0, ${height - 50})`)
         .call(d3.axisBottom(x));
 
-    barLayer.append("g")
+    layer.append("g")
         .attr("transform", `translate(100,0)`)
         .call(d3.axisLeft(y));
 
-    barLayer.selectAll("rect")
+    layer.selectAll("rect")
         .data(barData.filter(d => selectedCheck.has(d.taxon)))
-        .join(
-            enter => enter.append("rect"),
-            update => update,
-            exit => exit.remove()
-        )
-        .interrupt()
+        .join("rect")
         .attr("x", d => x(d.category))
         .attr("y", d => y(d.count))
         .attr("width", x.bandwidth())
@@ -373,16 +385,66 @@ function drawRiskBars(data) {
 }
 
 
-function drawGroupScatter(data) {
-    const svg = d3.select("#vis")
-        .attr("width", width)
-        .attr("height", height);
 
-    scatterLayer.selectAll("*").remove();
+// function drawRiskBars(data) {
+//     barLayer.selectAll("*").remove();
+
+//     data = computeUpdatedSpecies(data);
+
+//     const barData = [];
+//     vertebrates.forEach(taxon => {
+//         classes.forEach(cat => {
+//             const count = data.filter(d =>
+//                 d.updated_category === cat &&
+//                 d.taxon === taxon
+//             ).length;
+
+//             barData.push({
+//                 category: cat,
+//                 taxon: taxon,
+//                 count: count
+//             });
+//         });
+//     });
+
+//     const x = d3.scaleBand()
+//         .domain(classes)
+//         .range([100, width - 100])
+//         .padding(0.2);
+
+//     const y = d3.scaleLinear()
+//         .domain([0, 80])
+//         .range([height - 50, 50]);
+
+//     barLayer.append("g")
+//         .attr("transform", `translate(0, ${height - 50})`)
+//         .call(d3.axisBottom(x));
+
+//     barLayer.append("g")
+//         .attr("transform", `translate(100,0)`)
+//         .call(d3.axisLeft(y));
+
+//     barLayer.selectAll("rect")
+//         .data(barData.filter(d => selectedCheck.has(d.taxon)))
+//         .join(
+//             enter => enter.append("rect"),
+//             update => update,
+//             exit => exit.remove()
+//         )
+//         .interrupt()
+//         .attr("x", d => x(d.category))
+//         .attr("y", d => y(d.count))
+//         .attr("width", x.bandwidth())
+//         .attr("height", d => (height - 50) - y(d.count))
+//         .attr("fill", d => color(d.taxon))
+//         .style("opacity", 0.5);
+// }
+
+function drawGroupIntoLayer(layer, data) {
+    layer.selectAll("*").remove();
 
     const groups = d3.group(data, d => d.taxon);
 
-    // NUMBER OF ANIMALS PER GROUP THAT ARE EXTINCT
     let result = [];
     groups.forEach((species, groupName) => {
         const worsened = species.filter(s => s.updated_category === 'EX').length;
@@ -398,20 +460,40 @@ function drawGroupScatter(data) {
         .domain([0, 80])
         .range([height - 50, 50]);
 
-    scatterLayer.append("g")
+    layer.append("g")
         .attr("transform", `translate(0, ${height - 50})`)
         .call(d3.axisBottom(x));
 
-    scatterLayer.append("g")
+    layer.append("g")
         .attr("transform", `translate(100,0)`)
         .call(d3.axisLeft(y));
 
-    scatterLayer.selectAll("rect")
+    layer.selectAll("rect")
         .data(result)
         .join("rect")
-        .attr("x", d => x(d.group))                  // LEFT EDGE
-        .attr("y", d => y(d.worsened))               // TOP OF BAR
-        .attr("width", x.bandwidth())                // FULL BAND
-        .attr("height", d => y(0) - y(d.worsened))   // BAR HEIGHT
-        .attr("fill", d => color(d.group));          // FIXED COLOR TARGET
+        .attr("x", d => x(d.group))
+        .attr("y", d => y(d.worsened))
+        .attr("width", x.bandwidth())
+        .attr("height", d => y(0) - y(d.worsened))
+        .attr("fill", d => color(d.group));
 }
+
+function drawGroupScrolly(data) {
+    scatterLayer.selectAll("*").remove();
+    drawGroupIntoLayer(scatterLayer, data);
+}
+
+function drawGroupSandbox(data) {
+    sandboxScatterLayer.selectAll("*").remove();
+    drawGroupIntoLayer(sandboxScatterLayer, data);
+}
+
+function initSandbox() {
+    activeChart = "both";           // ✅ restore both charts
+    bindSliders();                  // ✅ reattach sandbox sliders
+    drawRiskBarsSandbox(specieData);
+    drawGroupSandbox(specieData);
+    updateAll();
+}
+
+window.addEventListener("load", initSandbox);
