@@ -130,15 +130,21 @@ function animateSlider({
 
 function updateRiskWithTemp(val) {
     d3.select("#tempSlider").property("value", val);
+    d3.select("#habSlider").property("value", 0);
+    d3.select("#co2Slider").property("value", 0);
     updateAll();
 }
 
 function updateRiskWithHab(val) {
+    d3.select("#tempSlider").property("value", 0);
     d3.select("#habSlider").property("value", val);
+    d3.select("#co2Slider").property("value", 0);
     updateAll();
 }
 
 function updateRiskWithCO2(val) {
+    d3.select("#tempSlider").property("value", 0);
+    d3.select("#habSlider").property("value", 0);
     d3.select("#co2Slider").property("value", val);
     updateAll();
 }
