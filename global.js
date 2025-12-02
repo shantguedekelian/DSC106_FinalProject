@@ -66,7 +66,7 @@ function showChart(stepNum) {
     barLayer.selectAll("*").remove();
     scatterLayer.selectAll("*").remove();
     charts[stepNum]();
-    
+
     bindSliders();
 }
 
@@ -148,8 +148,8 @@ function drawIntro() {
     vis.append("text")
         .attr("x", 100)
         .attr("y", 200)
-        .style("font-size", "125%")
-        .text("Scroll to explore species risk changes");
+        .style("font-size", "125%");
+        //.text("Scroll to explore species risk changes");
 }
 // scrolly: temp increase animation
 function drawTempIncrease() {
@@ -177,8 +177,8 @@ function drawHabLoss() {
     animateSlider({
         sliderId: "#habSlider",
         start: 0,
-        end: 5,
-        step: 0.05,
+        end: 50,
+        step: 0.5,
         delay: 30,
         onUpdate: updateRiskWithHab
     });
@@ -193,8 +193,8 @@ function drawCarbonIncrease() {
     animateSlider({
         sliderId: "#co2Slider",
         start: 0,
-        end: 5,
-        step: 0.05,
+        end: 200,
+        step: 2,
         delay: 30,
         onUpdate: updateRiskWithCO2
     });
@@ -205,8 +205,8 @@ function drawConclusion() {
     vis.append("text")
         .attr("x", 40)
         .attr("y", 200)
-        .style("font-size", "125%")
-        .text("Final insights on species risk under climate scenarios");
+        .style("font-size", "125%");
+        //.text("Final insights on species risk under climate scenarios");
 }
 
 

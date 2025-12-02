@@ -173,6 +173,8 @@ img {
 #vis {
   width: 90%;
   height: 90%;
+  position: relative;
+  z-index: 1;
 }
 
 #steps {
@@ -211,4 +213,10 @@ img {
 .step.is-exiting {
   opacity: 0;
   transform: translateY(-20px);
+}
+
+
+#controls {
+  position: relative;
+  z-index: 10;
 }
