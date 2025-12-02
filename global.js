@@ -41,11 +41,12 @@ const classes = ["LC", "NT", "VU", "EN", "CR", "EX"];
 // scrolly: store chart functions
 const charts = {
     1: () => drawIntro(),
-    2: () => drawRiskBars(specieData),
-    3: () => drawGroupScatter(specieData),
-    4: () => drawConclusion()
+    2: () => drawTempIncrease(),
+    3: () => drawHabLoss(),
+    4: () => drawCarbonIncrease(),
+    5: () => drawConclusion()
     // Add more steps as needed
-    // 5: () => yourFunction()
+    // 6: () => yourFunction()
 };
 
 function showChart(stepNum) {
@@ -90,6 +91,21 @@ function drawIntro() {
         .style("font-size", "125%")
         .text("Scroll to explore species risk changes");
 }
+// scrolly: temp increase animation
+function drawTempIncrease(){
+
+}
+
+// scrolly: habitat loss increase animation
+function drawHabLoss(){
+
+}
+
+// scrolly: co2 increase animation
+function drawCarbonIncrease(){
+
+}
+
 // scrolly: outro
 function drawConclusion() {
     vis.append("text")
@@ -98,6 +114,7 @@ function drawConclusion() {
         .style("font-size", "125%")
         .text("Final insights on species risk under climate scenarios");
 }
+
 
 const color = d3.scaleOrdinal()
     .domain(vertebrates)
