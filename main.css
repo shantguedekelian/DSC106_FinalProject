@@ -164,7 +164,7 @@ img {
   align-items: flex-start; /* chart aligned left */
   justify-content: flex-start; /* push everything to top */
   z-index: 5;
-  height: 80vh;       /* sticky container height */
+  height: 90vh;       /* sticky container height */
 }
 
 
@@ -182,8 +182,8 @@ img {
 
 #vis {
   position: relative;   /* keep it in normal flow */
-  top: -40px;           /* move it up 20px */
-  left: -10px;          /* move it left 10px */
+  top: -10px;           /* move it up 20px */
+  left: -20px;          /* move it left 10px */
   z-index: 5;
   width: 100%;
   height: 100%;
