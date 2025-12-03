@@ -245,3 +245,10 @@ img {
   z-index: 20;
 }
 
+.taxon-box.reptile {
+    accent-color: steelblue;
+}
+
+.taxon-box.amphibian {
+    accent-color: hotpink;
+}

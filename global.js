@@ -2,8 +2,8 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 import scrollama from 'https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm';
 
 
-const width = 800;
-const height = 500;
+const width = 900;
+const height = 600;
 let activeTimer = null;
 //let activeChart = "both"; 
 let activeChart = "scrolly";
