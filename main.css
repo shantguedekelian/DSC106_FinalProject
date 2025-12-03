@@ -181,8 +181,7 @@ img {
 
 
 #vis {
-  position: relative;   /* keep it in normal flow */
-  top: -10px;           /* move it up 20px */
+  position: relative;   /* keep it in normal flow */ 
   left: -20px;          /* move it left 10px */
   z-index: 5;
   width: 100%;
