@@ -2,8 +2,8 @@ import * as d3 from 'https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm';
 import scrollama from 'https://cdn.jsdelivr.net/npm/scrollama@3.2.0/+esm';
 
 
-const width = 900;
-const height = 600;
+const width = 800;
+const height = 500;
 let activeTimer = null;
 //let activeChart = "both"; 
 let activeChart = "scrolly";
@@ -136,26 +136,26 @@ function animateSlider({ sliderId, start, end, step = 0.5, delay = 30, setter })
     }, delay);
 }
 
-let temp_val = 0;
-let hab_val = 0;
-let co2_val = 0;
+let tempVal = 0;
+let habVal = 0;
+let co2Val = 0;
 
 function updateRiskWithTemp(val) {
-    temp_val = val;
+    tempVal = val;
     d3.select("#tempSlider").property("value", val);
     d3.select("#tempValue").text(val.toFixed(1));
     updateAll();
 }
 
 function updateRiskWithHab(val) {
-    hab_val = val;
+    habVal = val;
     d3.select("#habSlider").property("value", val);
     d3.select("#habValue").text(val);
     updateAll();
 }
 
 function updateRiskWithCO2(val) {
-    co2_val = val;
+    co2Val = val;
     d3.select("#co2Slider").property("value", val);
     d3.select("#co2Value").text(val);
     updateAll();
@@ -189,6 +189,18 @@ function drawIntro() {
     
     drawRiskBars(getFilteredData());
 
+    tempAnimated = false;
+    habAnimated = false;
+    co2Animated = false;
+
+    tempVal = 0;
+    habVal = 0;
+    co2Val = 0;
+
+    updateRiskWithTemp(tempVal)
+    updateRiskWithHab(habVal)
+    updateRiskWithCO2(co2Val)
+
 }
 // scrolly: temp increase animation
 function drawTempIncrease() {
@@ -201,8 +213,8 @@ function drawTempIncrease() {
 
     animateSlider({
         sliderId: "#tempSlider",
-        start: temp_val,
-        end: 5,
+        start: tempVal,
+        end: 4,
         step: 0.05,
         delay: 30,
         setter: updateRiskWithTemp
@@ -223,7 +235,7 @@ function drawHabLoss() {
 
     animateSlider({
         sliderId: "#habSlider",
-        start: hab_val,
+        start: habVal,
         end: 50,
         step: 0.5,
         delay: 30,
@@ -247,7 +259,7 @@ function drawCarbonIncrease() {
 
     animateSlider({
         sliderId: "#co2Slider",
-        start: co2_val,
+        start: co2Val,
         end: 200,
         step: 2,
         delay: 30,
@@ -266,6 +278,19 @@ function drawConclusion() {
         .style("font-size", "125%");
 
     drawRiskBars(getFilteredData());
+
+    
+    tempAnimated = false;
+    habAnimated = false;
+    co2Animated = false;
+
+    tempVal = 0;
+    habVal = 0;
+    co2Val = 0;
+
+    updateRiskWithTemp(tempVal)
+    updateRiskWithHab(habVal)
+    updateRiskWithCO2(co2Val)
 }
 
 function activateSandbox() {
@@ -332,9 +357,9 @@ function bindSliders() {
 
 function computeRisk(d) {
     let score = d.risk_score;
-    score += d.temp_sensitivity * temp_val;
-    score += d.habitat_loss_sens * (hab_val / 10);
-    score += d.co2_sens * (co2_val / 100);
+    score += d.temp_sensitivity * tempVal;
+    score += d.habitat_loss_sens * (habVal / 10);
+    score += d.co2_sens * (co2Val / 100);
     return score;
 }
 
