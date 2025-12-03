@@ -360,56 +360,94 @@ function computeUpdatedSpecies(data) {
 
 
 function drawRiskBars(data) {
-    // Remove only bars, not axes
-    barLayer.selectAll("rect").remove();
-
+    barLayer.selectAll("*").remove();
     data = computeUpdatedSpecies(data);
-    const barData = [];
 
-    vertebrates.forEach(taxon => {
-        classes.forEach(cat => {
-            const count = data.filter(d =>
-                d.updated_category === cat &&
-                d.taxon === taxon
-            ).length;
+    // --- Step 1: Aggregate counts per category ---
+    const barData = d3.rollup(
+        data,
+        v => ({
+            REPTILIA: v.filter(d => d.taxon === "REPTILIA").length,
+            AMPHIBIA: v.filter(d => d.taxon === "AMPHIBIA").length
+        }),
+        d => d.updated_category
+    );
 
-            barData.push({ category: cat, taxon, count });
-        });
+    const categories = classes;
+    const taxa = ["REPTILIA", "AMPHIBIA"];
+
+    // --- Step 2: Build stacked input (respect checkboxes) ---
+    const stackedInput = categories.map(cat => {
+        const counts = barData.get(cat) || { REPTILIA: 0, AMPHIBIA: 0 };
+        return {
+            category: cat,
+            REPTILIA: selectedCheck.has("REPTILIA") ? counts.REPTILIA : 0,
+            AMPHIBIA: selectedCheck.has("AMPHIBIA") ? counts.AMPHIBIA : 0
+        };
     });
 
+    const stackGen = d3.stack().keys(taxa);
+    const series = stackGen(stackedInput);
+
+    // --- Step 3: Scales ---
     const x = d3.scaleBand()
-        .domain(classes)
+        .domain(categories)
         .range([100, width - 100])
         .padding(0.2);
 
     const y = d3.scaleLinear()
-        .domain([0, 80])
+        .domain([
+            0,
+            d3.max(series, s => d3.max(s, d => d[1]))
+        ])
+        .nice()
         .range([height - 50, 50]);
 
-    // Draw axes once (optional: only if first draw)
-    if (barLayer.selectAll("g.axis").empty()) {
-        barLayer.append("g")
-            .attr("class", "axis x-axis")
-            .attr("transform", `translate(0, ${height - 50})`)
-            .call(d3.axisBottom(x));
+    // --- Step 4: Axes ---
+    barLayer.append("g")
+        .attr("transform", `translate(0, ${height - 50})`)
+        .call(d3.axisBottom(x));
 
-        barLayer.append("g")
-            .attr("class", "axis y-axis")
-            .attr("transform", `translate(100,0)`)
-            .call(d3.axisLeft(y));
-    }
+    barLayer.append("g")
+        .attr("transform", `translate(100,0)`)
+        .call(d3.axisLeft(y));
 
-    barLayer.selectAll("rect")
-        .data(barData.filter(d => selectedCheck.has(d.taxon)))
+    // --- Step 5: Draw stacked bars ---
+    const groups = barLayer.selectAll("g.layer")
+        .data(series)
+        .join("g")
+        .attr("class", "layer")
+        .attr("fill", d => color(d.key))
+        .style("opacity", 0.7);
+
+    groups.selectAll("rect")
+        .data(d => d)
         .join("rect")
-        .interrupt()
-        .attr("x", d => x(d.category))
-        .attr("y", d => y(d.count))
-        .attr("width", x.bandwidth())
-        .attr("height", d => (height - 50) - y(d.count))
-        .attr("fill", d => color(d.taxon))
-        .style("opacity", 0.5);
+        .attr("x", d => x(d.data.category))
+        .attr("y", d => y(d[1]))
+        .attr("height", d => y(d[0]) - y(d[1]))
+        .attr("width", x.bandwidth());
+
+    // --- Step 6: Add top labels (total for each bar) ---
+    const totals = stackedInput.map(d => ({
+        category: d.category,
+        total: d.REPTILIA + d.AMPHIBIA
+    }));
+
+    barLayer.selectAll("text.total-label")
+        .data(totals)
+        .join("text")
+        .attr("class", "total-label")
+        .attr("x", d => x(d.category) + x.bandwidth() / 2)
+        .attr("y", d => y(d.total) - 6)   // put slightly above the bar
+        .attr("text-anchor", "middle")
+        .style("font-size", "14px")
+        .style("font-weight", "600")
+        .text(d => d.total > 0 ? d.total : "");
 }
+
+
+
 
 
 function drawGroupBars(data) {
