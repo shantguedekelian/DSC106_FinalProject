@@ -14,31 +14,30 @@
     <h3>What are the main causes for Amphibians and Reptiles going extinct?</h3>
 
     <section id="scrolly">
-        <div id="graphic">
-            <div id="controls">
-        <label>Temperature Rise (°C):
-            <input id="tempSlider" type="range" min="0" max="4" step="0.1" value="0">
-            <span id="tempValue">0</span>
-        </label><br>
 
-        <label>Habitat Loss (%):
-            <input id="habSlider" type="range" min="0" max="50" step="1" value="0">
-            <span id="habValue">0</span>
-        </label><br>
-
-        <label>CO₂ Increase (ppm):
-            <input id="co2Slider" type="range" min="0" max="200" step="10" value="0">
-            <span id="co2Value">0</span>
-        </label>
-
-        <label>
-            <input id="reptileCheck" type="checkbox" value="REPTILIA" checked> Reptilia
-        </label>
+        <div id="controls" style="position: sticky; top: 20px; width: 900px; height: 600px;">
+            <label>Temperature Rise (°C):
+                <input id="tempSlider" type="range" min="0" max="4" step="0.1" value="0">
+                <span id="tempValue">0</span>
+            </label><br>
+    
+            <label>Habitat Loss (%):
+                <input id="habSlider" type="range" min="0" max="50" step="1" value="0">
+                <span id="habValue">0</span>
+            </label><br>
+    
+            <label>CO₂ Increase (ppm):
+                <input id="co2Slider" type="range" min="0" max="200" step="10" value="0">
+                <span id="co2Value">0</span>
+            </label>
+    
+            <label>
+                <input id="reptileCheck" type="checkbox" value="REPTILIA" checked> Reptilia
+            </label>
         
-        <label>
-            <input id="amphibianCheck" type="checkbox" value="AMPHIBIA" checked> Amphibia
-        </label>
-    </div>
+            <label>
+                <input id="amphibianCheck" type="checkbox" value="AMPHIBIA" checked> Amphibia
+            </label>
             <svg id="vis" width="900" height="600"></svg>
         </div>
 
@@ -117,28 +116,26 @@
     </section>
 
     
-    <svg id="risk_plot"></svg>
-    <svg id="group_scatter"></svg>
 
-    <h3> What have you done so far? </h3>
-    <p> We have created an interactive bar chart that filters between Amphibians and Reptiles, 
-        and allows users to adjust sliders for temperature rise, habitat loss, and CO₂ increase. 
-        As users manipulate these sliders, the risk levels for each species group are 
-        updated in the visualization. This helps users understand how different environmental factors
-        contribute to the extinction risk of these species. This will form the basis of our threat model,
-        which will be at the end of the storytelling scroll section, where we will summarize the key insights.
-    </p>
+        <h3> What have you done so far? </h3>
+        <p> We have created an interactive bar chart that filters between Amphibians and Reptiles, 
+            and allows users to adjust sliders for temperature rise, habitat loss, and CO₂ increase. 
+            As users manipulate these sliders, the risk levels for each species group are 
+            updated in the visualization. This helps users understand how different environmental factors
+            contribute to the extinction risk of these species. This will form the basis of our threat model,
+            which will be at the end of the storytelling scroll section, where we will summarize the key insights.
+        </p>
 
-    <h3> What will be the most challenging of your project to design and why? </h3>
-    <p> The most challenging part of our project will be using animations to enhance our visualization.
-        We want to create smooth transitions between different states of the visualization as users adjust 
-        the sliders. Since we also plan on implementing a scroll animation, we want to make sure that these 
-        features flow seamlessly, as any jumps or lags may disrupt the user.
-        Animations can be tricky to implement effectively, as they require "perfect" timing. 
-        If the animations are too fast or too slow, it can harm a visualization rather than enhance it.
-        Therefore, we will need to do some testing on the timing and pacing of our animations to ensure 
-        they are effective.
-    </p>
+        <h3> What will be the most challenging of your project to design and why? </h3>
+        <p> The most challenging part of our project will be using animations to enhance our visualization.
+            We want to create smooth transitions between different states of the visualization as users adjust 
+            the sliders. Since we also plan on implementing a scroll animation, we want to make sure that these 
+            features flow seamlessly, as any jumps or lags may disrupt the user.
+            Animations can be tricky to implement effectively, as they require "perfect" timing. 
+            If the animations are too fast or too slow, it can harm a visualization rather than enhance it.
+            Therefore, we will need to do some testing on the timing and pacing of our animations to ensure 
+            they are effective.
+        </p>
 </body> 
 
 </html>

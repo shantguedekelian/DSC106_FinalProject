@@ -9,6 +9,10 @@ let activeTimer = null;
 let activeChart = "scrolly";
 let sandboxMode = false;
 
+let tempAnimated = false;
+let habAnimated = false;
+let co2Animated = false;
+
 
 const vis = d3.select("#vis")
     .attr("width", width)
@@ -48,9 +52,15 @@ async function loadData() {
         console.error('Error loading specie data :', error);
     }
 }
+
+bindSliders();
 const specieData = await loadData();
 const vertebrates = Array.from(new Set(specieData.map(d => d.taxon)));
 const classes = ["LC", "NT", "VU", "EN", "CR", "EX"];
+
+d3.select("#tempSlider").on("input", e => updateRiskWithTemp(+e.target.value));
+d3.select("#habSlider").on("input", e => updateRiskWithHab(+e.target.value));
+d3.select("#co2Slider").on("input", e => updateRiskWithCO2(+e.target.value));
 
 
 // scrolly: store chart functions
@@ -72,15 +82,7 @@ function showChart(stepNum) {
         activeTimer.stop();
         activeTimer = null;
     }
-
-    unbindSliders();
-
-    barLayer.selectAll("*").remove();
-    scatterLayer.selectAll("*").remove();
-
     charts[stepNum]();
-
-    if (stepNum === 6) bindSliders();
 }
 
 // scrolly: scrolly setup
@@ -112,101 +114,132 @@ function setupScroll() {
 }
 setupScroll();
 
-function animateSlider({
-    sliderId,
-    start,
-    end,
-    step = 0.5,
-    delay = 30,
-    onUpdate
-}) {
-    if (activeTimer) activeTimer.stop();
+function animateSlider({ sliderId, start, end, step = 0.5, delay = 30, setter }) {
+    if (activeTimer) {
+        activeTimer.stop();
+        activeTimer = null;
+    }
 
-    const slider = d3.select(sliderId);
     let value = start;
-
-    slider.property("value", value);
-    onUpdate(value);
+    setter(value); // update state + graph
 
     activeTimer = d3.interval(() => {
         value += step;
-
         if (value >= end) {
             value = end;
+            setter(value);
             activeTimer.stop();
+            activeTimer = null;
+            return;
         }
-
-        slider.property("value", value);
-        onUpdate(value);
+        setter(value);
     }, delay);
 }
 
+let temp_val = 0;
+let hab_val = 0;
+let co2_val = 0;
+
 function updateRiskWithTemp(val) {
+    temp_val = val;
     d3.select("#tempSlider").property("value", val);
-    d3.select("#habSlider").property("value", 0);
-    d3.select("#co2Slider").property("value", 0);
+    d3.select("#tempValue").text(val.toFixed(1));
     updateAll();
 }
 
 function updateRiskWithHab(val) {
-    d3.select("#tempSlider").property("value", 0);
+    hab_val = val;
     d3.select("#habSlider").property("value", val);
-    d3.select("#co2Slider").property("value", 0);
+    d3.select("#habValue").text(val);
     updateAll();
 }
 
 function updateRiskWithCO2(val) {
-    d3.select("#tempSlider").property("value", 0);
-    d3.select("#habSlider").property("value", 0);
+    co2_val = val;
     d3.select("#co2Slider").property("value", val);
+    d3.select("#co2Value").text(val);
     updateAll();
 }
 
+function updateAll() {
+    const updated = computeUpdatedSpecies(getFilteredData());
+
+    if (sandboxMode || activeChart === "both") {
+        drawRiskBars(updated);
+        drawGroupBars(updated);
+    } else if (activeChart === "bars" || activeChart === "intro") {
+        drawRiskBars(updated);
+    } else if (activeChart === "scatter") {
+        drawGroupBars(updated);
+    }
+}
+
+
+
+
 // scrolly: intro
 function drawIntro() {
+    if (activeChart === "intro") return;
+    
+    activeChart = "intro";
     vis.append("text")
         .attr("x", 100)
         .attr("y", 200)
         .style("font-size", "125%");
-        //.text("Scroll to explore species risk changes");
+    
+    drawRiskBars(getFilteredData());
+
 }
 // scrolly: temp increase animation
 function drawTempIncrease() {
+    if (tempAnimated) return;
+    
     activeChart = "bars"; 
-    drawRiskBars(specieData);
+    drawRiskBars(getFilteredData());
 
     //drawGroupScatter(specieData);
 
     animateSlider({
         sliderId: "#tempSlider",
-        start: 0,
+        start: temp_val,
         end: 5,
         step: 0.05,
         delay: 30,
-        onUpdate: updateRiskWithTemp
-    });
+        setter: updateRiskWithTemp
+    });    
+
+    tempAnimated = true;
+    
 }
 
 // scrolly: habitat loss increase animation
 function drawHabLoss() {
+    if (habAnimated) return;
+
     activeChart = "bars"; 
-    drawRiskBars(specieData);
+    drawRiskBars(getFilteredData());
 
     //drawGroupScatter(specieData);
 
-
     animateSlider({
         sliderId: "#habSlider",
-        start: 0,
+        start: hab_val,
         end: 50,
         step: 0.5,
         delay: 30,
-        onUpdate: updateRiskWithHab
+        setter: updateRiskWithHab
     });
+
+    habAnimated = true;
+
 }
 
 // scrolly: co2 increase animation
 function drawCarbonIncrease() {
+    if (co2Animated) {
+        return;
+    }
+
     activeChart = "bars"; 
     drawRiskBars(specieData);
 
@@ -214,12 +247,15 @@ function drawCarbonIncrease() {
 
     animateSlider({
         sliderId: "#co2Slider",
-        start: 0,
+        start: co2_val,
         end: 200,
         step: 2,
         delay: 30,
-        onUpdate: updateRiskWithCO2
+        setter: updateRiskWithCO2
     });
+
+    co2Animated = true;
+
 }
 
 // scrolly: outro
@@ -228,7 +264,8 @@ function drawConclusion() {
         .attr("x", 40)
         .attr("y", 200)
         .style("font-size", "125%");
-        //.text("Final insights on species risk under climate scenarios");
+
+    drawRiskBars(getFilteredData());
 }
 
 function activateSandbox() {
@@ -240,13 +277,9 @@ function activateSandbox() {
         activeTimer = null;
     }
 
-    barLayer.selectAll("*").remove();
-    scatterLayer.selectAll("*").remove();
+    drawRiskBars(getFilteredData());
+    drawGroupBars(getFilteredData());
 
-    drawRiskBars(specieData);
-    drawGroupBars(specieData);
-
-    bindSliders();
 }
 
 
@@ -276,8 +309,12 @@ function handleCheckboxChange() {
 }
 
 // explicit bindings
-d3.select("#reptileCheck").on("change", handleCheckboxChange);
-d3.select("#amphibianCheck").on("change", handleCheckboxChange);
+d3.select("body").on("change", function(event) {
+    const target = event.target;
+    if (target.id === "reptileCheck" || target.id === "amphibianCheck") {
+        handleCheckboxChange.call(target, event);
+    }
+});
 
 console.log(
   "checkbox count =",
@@ -287,51 +324,20 @@ console.log(
 
 // sliders
 function bindSliders() {
-    d3.select("#tempSlider").on("input", updateAll);
-    d3.select("#habSlider").on("input", updateAll);
-    d3.select("#co2Slider").on("input", updateAll);
+    d3.select("#tempSlider").on("input", e => updateRiskWithTemp(+e.target.value));
+    d3.select("#habSlider").on("input", e => updateRiskWithHab(+e.target.value));
+    d3.select("#co2Slider").on("input", e => updateRiskWithCO2(+e.target.value));
 }
 
-function unbindSliders() {
-    d3.select("#tempSlider").on("input", null);
-    d3.select("#habSlider").on("input", null);
-    d3.select("#co2Slider").on("input", null);
-}
-
-function updateAll() {
-    d3.select("#tempValue").text(d3.select("#tempSlider").node().value);
-    d3.select("#habValue").text(d3.select("#habSlider").node().value);
-    d3.select("#co2Value").text(d3.select("#co2Slider").node().value);
-
-    const updated = computeUpdatedSpecies(getFilteredData());
-
-    if (activeChart === "bars") {
-        drawRiskBars(updated);
-    }
-
-    if (activeChart === "scatter") {
-        drawGroupBars(updated);
-    }
-
-    if (activeChart === "both") {
-        drawRiskBars(updated);
-        drawGroupBars(updated);
-    }
-}
 
 function computeRisk(d) {
-    const temp = +d3.select("#tempSlider").node().value;
-    const hab = +d3.select("#habSlider").node().value;
-    const co2 = +d3.select("#co2Slider").node().value;
-
     let score = d.risk_score;
-
-    score += d.temp_sensitivity * temp;
-    score += d.habitat_loss_sens * (hab / 10);
-    score += d.co2_sens * (co2 / 100);
-
+    score += d.temp_sensitivity * temp_val;
+    score += d.habitat_loss_sens * (hab_val / 10);
+    score += d.co2_sens * (co2_val / 100);
     return score;
 }
+
 
 function scoreToCategory(score) {
     if (score < 1) return "LC";
@@ -354,11 +360,12 @@ function computeUpdatedSpecies(data) {
 
 
 function drawRiskBars(data) {
-    barLayer.selectAll("*").remove();
+    // Remove only bars, not axes
+    barLayer.selectAll("rect").remove();
 
     data = computeUpdatedSpecies(data);
-
     const barData = [];
+
     vertebrates.forEach(taxon => {
         classes.forEach(cat => {
             const count = data.filter(d =>
@@ -366,11 +373,7 @@ function drawRiskBars(data) {
                 d.taxon === taxon
             ).length;
 
-            barData.push({
-                category: cat,
-                taxon: taxon,
-                count: count
-            });
+            barData.push({ category: cat, taxon, count });
         });
     });
 
@@ -383,21 +386,22 @@ function drawRiskBars(data) {
         .domain([0, 80])
         .range([height - 50, 50]);
 
-    barLayer.append("g")
-        .attr("transform", `translate(0, ${height - 50})`)
-        .call(d3.axisBottom(x));
+    // Draw axes once (optional: only if first draw)
+    if (barLayer.selectAll("g.axis").empty()) {
+        barLayer.append("g")
+            .attr("class", "axis x-axis")
+            .attr("transform", `translate(0, ${height - 50})`)
+            .call(d3.axisBottom(x));
 
-    barLayer.append("g")
-        .attr("transform", `translate(100,0)`)
-        .call(d3.axisLeft(y));
+        barLayer.append("g")
+            .attr("class", "axis y-axis")
+            .attr("transform", `translate(100,0)`)
+            .call(d3.axisLeft(y));
+    }
 
     barLayer.selectAll("rect")
         .data(barData.filter(d => selectedCheck.has(d.taxon)))
-        .join(
-            enter => enter.append("rect"),
-            update => update,
-            exit => exit.remove()
-        )
+        .join("rect")
         .interrupt()
         .attr("x", d => x(d.category))
         .attr("y", d => y(d.count))
@@ -406,6 +410,7 @@ function drawRiskBars(data) {
         .attr("fill", d => color(d.taxon))
         .style("opacity", 0.5);
 }
+
 
 function drawGroupBars(data) {
     scatterLayer.selectAll("*").remove();
