@@ -511,5 +511,3 @@ function drawGroupBars(data) {
         .attr("height", d => y(0) - y(d.worsened))
         .attr("fill", d => color(d.group));
 }
-
-
