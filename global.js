@@ -180,13 +180,13 @@ function updateAll() {
 // scrolly: intro
 function drawIntro() {
     if (activeChart === "intro") return;
-    
+
     activeChart = "intro";
     vis.append("text")
         .attr("x", 100)
         .attr("y", 200)
         .style("font-size", "125%");
-    
+
     drawRiskBars(getFilteredData());
 
     tempAnimated = false;
@@ -205,8 +205,8 @@ function drawIntro() {
 // scrolly: temp increase animation
 function drawTempIncrease() {
     if (tempAnimated) return;
-    
-    activeChart = "bars"; 
+
+    activeChart = "bars";
     drawRiskBars(getFilteredData());
 
     //drawGroupScatter(specieData);
@@ -218,17 +218,17 @@ function drawTempIncrease() {
         step: 0.05,
         delay: 30,
         setter: updateRiskWithTemp
-    });    
+    });
 
     tempAnimated = true;
-    
+
 }
 
 // scrolly: habitat loss increase animation
 function drawHabLoss() {
     if (habAnimated) return;
 
-    activeChart = "bars"; 
+    activeChart = "bars";
     drawRiskBars(getFilteredData());
 
     //drawGroupScatter(specieData);
@@ -252,7 +252,7 @@ function drawCarbonIncrease() {
         return;
     }
 
-    activeChart = "bars"; 
+    activeChart = "bars";
     drawRiskBars(specieData);
 
     //drawGroupScatter(specieData);
@@ -279,7 +279,7 @@ function drawConclusion() {
 
     drawRiskBars(getFilteredData());
 
-    
+
     tempAnimated = false;
     habAnimated = false;
     co2Animated = false;
@@ -317,7 +317,7 @@ let selectedCheck = new Set(vertebrates);  // e.g. {"AMPHIBIAN", "REPTILE"}
 function getFilteredData() {
     return specieData.filter(d => selectedCheck.has(d.taxon));
 }
-    
+
 function handleCheckboxChange() {
     const taxon = this.value;   // "REPTILE" or "AMPHIBIAN"
 
@@ -334,7 +334,7 @@ function handleCheckboxChange() {
 }
 
 // explicit bindings
-d3.select("body").on("change", function(event) {
+d3.select("body").on("change", function (event) {
     const target = event.target;
     if (target.id === "reptileCheck" || target.id === "amphibianCheck") {
         handleCheckboxChange.call(target, event);
@@ -342,8 +342,8 @@ d3.select("body").on("change", function(event) {
 });
 
 console.log(
-  "checkbox count =",
-  d3.selectAll('input[type="checkbox"]').size()
+    "checkbox count =",
+    d3.selectAll('input[type="checkbox"]').size()
 );
 
 
@@ -415,16 +415,15 @@ function drawRiskBars(data) {
     const series = stackGen(stackedInput);
 
     // --- Step 3: Scales ---
+    const maxTotal = specieData.length; // or a constant you prefer
+
     const x = d3.scaleBand()
         .domain(categories)
         .range([100, width - 100])
         .padding(0.2);
 
     const y = d3.scaleLinear()
-        .domain([
-            0,
-            d3.max(series, s => d3.max(s, d => d[1]))
-        ])
+        .domain([0, maxTotal])     // FIXED
         .nice()
         .range([height - 50, 50]);
 
